@@ -1,4 +1,4 @@
-const BASE_PATH = "https://api.chatdaddy.tech/transcoder".replace(/\/+$/, "");
+const BASE_PATH = "https://api.messcat.ai/transcoder".replace(/\/+$/, "");
 
 /* tslint:disable */
 /* eslint-disable */
@@ -99,9 +99,9 @@ export const TranscodeApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -124,7 +124,7 @@ export const TranscodeApiAxiosParamCreator = function (configuration?: Configura
          * @param {string} chatId Chat ID
          * @param {string} id Message ID
          * @param {number} index Attachment index
-         * @param {string} [token] ChatDaddy auth token, optionally provide in query
+         * @param {string} [token] auth token, optionally provide in query
          * @param {string} [mimetype] override the mimetype of the media post transcoding
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -154,9 +154,9 @@ export const TranscodeApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CHATS_ACCESS_ALL", "CHATS_ACCESS_ASSIGNED"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CHATS_ACCESS_ALL", "CHATS_ACCESS_ASSIGNED"], configuration)
 
             if (token !== undefined) {
                 localVarQueryParameter['token'] = token;
@@ -185,7 +185,7 @@ export const TranscodeApiAxiosParamCreator = function (configuration?: Configura
          * @param {string} [key] Base64 encoded key for decryption
          * @param {string} [iv] Base64 encoded IV for decryption
          * @param {string} [expectedMimetype] expected mimetype of the media post transcoding
-         * @param {string} [token] ChatDaddy auth token, optionally provide in query
+         * @param {string} [token] auth token, optionally provide in query
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -207,9 +207,9 @@ export const TranscodeApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (url !== undefined) {
                 localVarQueryParameter['url'] = url;
@@ -272,7 +272,7 @@ export const TranscodeApiFp = function(configuration?: Configuration) {
          * @param {string} chatId Chat ID
          * @param {string} id Message ID
          * @param {number} index Attachment index
-         * @param {string} [token] ChatDaddy auth token, optionally provide in query
+         * @param {string} [token] auth token, optionally provide in query
          * @param {string} [mimetype] override the mimetype of the media post transcoding
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -291,7 +291,7 @@ export const TranscodeApiFp = function(configuration?: Configuration) {
          * @param {string} [key] Base64 encoded key for decryption
          * @param {string} [iv] Base64 encoded IV for decryption
          * @param {string} [expectedMimetype] expected mimetype of the media post transcoding
-         * @param {string} [token] ChatDaddy auth token, optionally provide in query
+         * @param {string} [token] auth token, optionally provide in query
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -393,7 +393,7 @@ export interface TranscodeApiStreamMessageAttachmentRequest {
     readonly index: number
 
     /**
-     * ChatDaddy auth token, optionally provide in query
+     * auth token, optionally provide in query
      * @type {string}
      * @memberof TranscodeApiStreamMessageAttachment
      */
@@ -449,7 +449,7 @@ export interface TranscodeApiTranscodeRequest {
     readonly expectedMimetype?: string
 
     /**
-     * ChatDaddy auth token, optionally provide in query
+     * auth token, optionally provide in query
      * @type {string}
      * @memberof TranscodeApiTranscode
      */

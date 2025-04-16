@@ -1,9 +1,9 @@
-const BASE_PATH = "https://api.chatdaddy.tech/nlp".replace(/\/+$/, "");
+const BASE_PATH = "https://api.messcat.ai/nlp".replace(/\/+$/, "");
 
 /* tslint:disable */
 /* eslint-disable */
 /**
- * ChatDaddy NLP Service
+ * NLP Service
  * Manage keyword based replies & AI automation
  *
  * The version of the OpenAPI document: 1.0.0
@@ -134,7 +134,7 @@ export interface AiCreditUseTranscriptionMetadata {
  * @export
  * @interface AutocompleteCalendarEventRequest
  */
-interface AutocompleteCalendarEventRequest {
+export interface AutocompleteCalendarEventRequest {
     /**
      * message to extract calendar event data from
      * @type {string}
@@ -149,7 +149,7 @@ interface AutocompleteCalendarEventRequest {
  */
 export interface AutocompleteInbox200Response {
     /**
-     * Name of the chatbot that generated the suggestions. Will use \"ChatDaddy AI\" if used vanilla GPT
+     * Name of the chatbot that generated the suggestions. Will use \"AI\" if used vanilla GPT
      * @type {string}
      * @memberof AutocompleteInbox200Response
      */
@@ -268,7 +268,7 @@ export interface AutocompleteSuggestion {
  * @export
  * @interface CalendarEvent
  */
-interface CalendarEvent {
+export interface CalendarEvent {
     /**
      * Title of the event
      * @type {string}
@@ -451,7 +451,7 @@ export interface ChatbotMessageResponse {
  * @export
  * @interface ContactToken
  */
-interface ContactToken {
+export interface ContactToken {
     /**
      * ID of the contact
      * @type {string}
@@ -1579,7 +1579,7 @@ export interface LlmTool {
  * @export
  * @interface OauthCallback200Response
  */
-interface OauthCallback200Response {
+export interface OauthCallback200Response {
     /**
      * 
      * @type {string}
@@ -1941,9 +1941,9 @@ export const AudioTranscriptionApiAxiosParamCreator = function (configuration?: 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -1978,9 +1978,9 @@ export const AudioTranscriptionApiAxiosParamCreator = function (configuration?: 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -2153,9 +2153,9 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -2198,9 +2198,9 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -2239,9 +2239,9 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -2334,9 +2334,9 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
             if (isCustomField !== undefined) {
                 localVarQueryParameter['isCustomField'] = isCustomField;
@@ -2708,9 +2708,9 @@ export const ChatbotApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -2743,9 +2743,9 @@ export const ChatbotApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -2784,9 +2784,9 @@ export const ChatbotApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -2819,9 +2819,9 @@ export const ChatbotApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
             if (id) {
                 localVarQueryParameter['id'] = id;
@@ -2866,9 +2866,9 @@ export const ChatbotApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -2906,9 +2906,9 @@ export const ChatbotApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -2948,9 +2948,9 @@ export const ChatbotApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -2989,9 +2989,9 @@ export const ChatbotApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -3028,9 +3028,9 @@ export const ChatbotApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -3580,9 +3580,9 @@ export const KeywordsApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["KEYWORD_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["KEYWORD_CREATE"], configuration)
 
 
     
@@ -3620,9 +3620,9 @@ export const KeywordsApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["KEYWORD_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["KEYWORD_DELETE"], configuration)
 
             if (ids) {
                 localVarQueryParameter['ids'] = ids;
@@ -3661,9 +3661,9 @@ export const KeywordsApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["KEYWORD_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["KEYWORD_UPDATE"], configuration)
 
 
     
@@ -3705,9 +3705,9 @@ export const KeywordsApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["KEYWORD_READ"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["KEYWORD_READ"], configuration)
 
             if (count !== undefined) {
                 localVarQueryParameter['count'] = count;
@@ -3757,9 +3757,9 @@ export const KeywordsApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["KEYWORD_READ"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["KEYWORD_READ"], configuration)
 
             if (q !== undefined) {
                 localVarQueryParameter['q'] = q;
@@ -4170,9 +4170,9 @@ export const KnowledgebaseApiAxiosParamCreator = function (configuration?: Confi
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -4210,9 +4210,9 @@ export const KnowledgebaseApiAxiosParamCreator = function (configuration?: Confi
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -4251,9 +4251,9 @@ export const KnowledgebaseApiAxiosParamCreator = function (configuration?: Confi
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -4293,9 +4293,9 @@ export const KnowledgebaseApiAxiosParamCreator = function (configuration?: Confi
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -4327,9 +4327,9 @@ export const KnowledgebaseApiAxiosParamCreator = function (configuration?: Confi
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -4365,9 +4365,9 @@ export const KnowledgebaseApiAxiosParamCreator = function (configuration?: Confi
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -4406,9 +4406,9 @@ export const KnowledgebaseApiAxiosParamCreator = function (configuration?: Confi
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     

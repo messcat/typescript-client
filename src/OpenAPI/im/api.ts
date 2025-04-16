@@ -1,10 +1,10 @@
-const BASE_PATH = "https://api.chatdaddy.tech/im".replace(/\/+$/, "");
+const BASE_PATH = "https://api.messcat.ai/im".replace(/\/+$/, "");
 
 /* tslint:disable */
 /* eslint-disable */
 /**
- * ChatDaddy Instant Messaging Service
- * Complete instant messaging API for WhatsApp Multi-Device & Business API. 
+ * Instant Messaging Service
+ * Connect to WhatsApp, Instagram, Messenger & More. 
  *
  * The version of the OpenAPI document: 2.0.0
  * 
@@ -80,7 +80,7 @@ export interface Account {
      */
     'createdAt': string;
     /**
-     * The user ID of the user on ChatDaddy
+     * The user ID of the user on Messcat
      * @type {string}
      * @memberof Account
      */
@@ -1856,7 +1856,7 @@ export interface Contact {
      */
     'type': ContactType;
     /**
-     * name of the contact as set on ChatDaddy
+     * name of the contact as set on Messcat
      * @type {string}
      * @memberof Contact
      */
@@ -4807,7 +4807,7 @@ export interface MetadataQuery {
      */
     'doneTo'?: string;
     /**
-     * The user ID of the user on ChatDaddy
+     * The user ID of the user on Messcat
      * @type {string}
      * @memberof MetadataQuery
      */
@@ -5830,7 +5830,7 @@ export interface Tag {
      */
     'createdAt': string;
     /**
-     * The user ID of the user on ChatDaddy
+     * The user ID of the user on Messcat
      * @type {string}
      * @memberof Tag
      */
@@ -6276,7 +6276,7 @@ export interface UpsertMetadata {
      */
     'doneAt': string;
     /**
-     * The user ID of the user on ChatDaddy
+     * The user ID of the user on Messcat
      * @type {string}
      * @memberof UpsertMetadata
      */
@@ -6543,9 +6543,9 @@ export const AccountApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_DELETE"], configuration)
 
 
     
@@ -6582,9 +6582,9 @@ export const AccountApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_PATCH"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
 
             if (logout !== undefined) {
                 localVarQueryParameter['logout'] = logout;
@@ -6625,9 +6625,9 @@ export const AccountApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_DELETE"], configuration)
 
             if (deleteNow !== undefined) {
                 localVarQueryParameter['deleteNow'] = deleteNow;
@@ -6671,9 +6671,9 @@ export const AccountApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (q !== undefined) {
                 localVarQueryParameter['q'] = q;
@@ -6741,9 +6741,9 @@ export const AccountApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_PATCH"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
 
 
     
@@ -6779,9 +6779,9 @@ export const AccountApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_PATCH"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
 
 
     
@@ -6818,9 +6818,9 @@ export const AccountApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_PATCH"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
 
 
     
@@ -6856,9 +6856,9 @@ export const AccountApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_CREATE"], configuration)
 
 
     
@@ -6898,9 +6898,9 @@ export const AccountApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_PATCH"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
 
 
     
@@ -7508,9 +7508,9 @@ export const AlibabaCamsApiAxiosParamCreator = function (configuration?: Configu
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_PATCH"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
 
 
     
@@ -7545,9 +7545,9 @@ export const AlibabaCamsApiAxiosParamCreator = function (configuration?: Configu
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -7584,9 +7584,9 @@ export const AlibabaCamsApiAxiosParamCreator = function (configuration?: Configu
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_PATCH"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
 
 
     
@@ -7626,9 +7626,9 @@ export const AlibabaCamsApiAxiosParamCreator = function (configuration?: Configu
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_PATCH"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
 
 
     
@@ -7668,9 +7668,9 @@ export const AlibabaCamsApiAxiosParamCreator = function (configuration?: Configu
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_PATCH"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
 
 
     
@@ -8112,9 +8112,9 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -8153,9 +8153,9 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -8187,9 +8187,9 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -8226,9 +8226,9 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -8264,9 +8264,9 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -8305,9 +8305,9 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -8349,9 +8349,9 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (count !== undefined) {
                 localVarQueryParameter['count'] = count;
@@ -8432,9 +8432,9 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (count !== undefined) {
                 localVarQueryParameter['count'] = count;
@@ -8507,9 +8507,9 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -8548,9 +8548,9 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -8587,9 +8587,9 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -9347,9 +9347,9 @@ export const ChatHistoryApiAxiosParamCreator = function (configuration?: Configu
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CHATS_ACCESS_ALL"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CHATS_ACCESS_ALL"], configuration)
 
             if (timeZone !== undefined) {
                 localVarQueryParameter['timeZone'] = timeZone;
@@ -9393,9 +9393,9 @@ export const ChatHistoryApiAxiosParamCreator = function (configuration?: Configu
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CHATS_ACCESS_ALL"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CHATS_ACCESS_ALL"], configuration)
 
 
     
@@ -9592,9 +9592,9 @@ export const ChatsApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CHATS_ACCESS_ALL", "CHATS_ACCESS_ASSIGNED"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CHATS_ACCESS_ALL", "CHATS_ACCESS_ASSIGNED"], configuration)
 
             if (count !== undefined) {
                 localVarQueryParameter['count'] = count;
@@ -9715,9 +9715,9 @@ export const ChatsApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CHATS_ACCESS_ALL", "CHATS_ACCESS_ASSIGNED"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CHATS_ACCESS_ALL", "CHATS_ACCESS_ASSIGNED"], configuration)
 
 
     
@@ -9763,9 +9763,9 @@ export const ChatsApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CHATS_ACCESS_ASSIGNED", "CHATS_ACCESS_ALL"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CHATS_ACCESS_ASSIGNED", "CHATS_ACCESS_ALL"], configuration)
 
             if (presence !== undefined) {
                 localVarQueryParameter['presence'] = presence;
@@ -10176,9 +10176,9 @@ export const ContactsApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CONTACTS_READ_ALL"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CONTACTS_READ_ALL"], configuration)
 
             if (type !== undefined) {
                 localVarQueryParameter['type'] = type;
@@ -10240,9 +10240,9 @@ export const ContactsApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CONTACTS_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CONTACTS_DELETE"], configuration)
 
             if (tags !== undefined) {
                 localVarQueryParameter['tags'] = tags;
@@ -10373,9 +10373,9 @@ export const ContactsApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CONTACTS_READ_ALL", "CONTACTS_READ_ASSIGNED"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CONTACTS_READ_ALL", "CONTACTS_READ_ASSIGNED"], configuration)
 
             if (tags !== undefined) {
                 localVarQueryParameter['tags'] = tags;
@@ -10512,9 +10512,9 @@ export const ContactsApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (type !== undefined) {
                 localVarQueryParameter['type'] = type;
@@ -10569,9 +10569,9 @@ export const ContactsApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CONTACTS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CONTACTS_UPDATE"], configuration)
 
             if (tags !== undefined) {
                 localVarQueryParameter['tags'] = tags;
@@ -10683,9 +10683,9 @@ export const ContactsApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CONTACTS_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CONTACTS_CREATE"], configuration)
 
 
     
@@ -11563,9 +11563,9 @@ export const FilesApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (mimetype !== undefined) {
                 localVarQueryParameter['mimetype'] = mimetype;
@@ -11710,9 +11710,9 @@ export const GroupsApiAxiosParamCreator = function (configuration?: Configuratio
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CHATS_ACCESS_ALL", "CHATS_ACCESS_ASSIGNED"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CHATS_ACCESS_ALL", "CHATS_ACCESS_ASSIGNED"], configuration)
 
             if (forceRefresh !== undefined) {
                 localVarQueryParameter['forceRefresh'] = forceRefresh;
@@ -11756,9 +11756,9 @@ export const GroupsApiAxiosParamCreator = function (configuration?: Configuratio
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CHATS_ACCESS_ALL", "CHATS_ACCESS_ASSIGNED"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CHATS_ACCESS_ALL", "CHATS_ACCESS_ASSIGNED"], configuration)
 
 
     
@@ -11801,9 +11801,9 @@ export const GroupsApiAxiosParamCreator = function (configuration?: Configuratio
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["GROUPS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["GROUPS_UPDATE"], configuration)
 
             if (code !== undefined) {
                 localVarQueryParameter['code'] = code;
@@ -11847,9 +11847,9 @@ export const GroupsApiAxiosParamCreator = function (configuration?: Configuratio
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["GROUPS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["GROUPS_UPDATE"], configuration)
 
 
     
@@ -11890,9 +11890,9 @@ export const GroupsApiAxiosParamCreator = function (configuration?: Configuratio
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["GROUPS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["GROUPS_UPDATE"], configuration)
 
 
     
@@ -11932,9 +11932,9 @@ export const GroupsApiAxiosParamCreator = function (configuration?: Configuratio
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["GROUPS_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["GROUPS_CREATE"], configuration)
 
 
     
@@ -12379,9 +12379,9 @@ export const MailApiAxiosParamCreator = function (configuration?: Configuration)
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_PATCH"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
 
 
     
@@ -12602,9 +12602,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["MESSAGES_SEND_TO_ALL", "MESSAGES_SEND_TO_ASSIGNED"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["MESSAGES_SEND_TO_ALL", "MESSAGES_SEND_TO_ASSIGNED"], configuration)
 
             if (accountId) {
                 localVarQueryParameter['accountId'] = accountId;
@@ -12658,9 +12658,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (ids) {
                 localVarQueryParameter['ids'] = ids;
@@ -12708,9 +12708,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["MESSAGES_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["MESSAGES_DELETE"], configuration)
 
 
     
@@ -12749,9 +12749,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["MESSAGES_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["MESSAGES_DELETE"], configuration)
 
             if (accountId !== undefined) {
                 localVarQueryParameter['accountId'] = accountId;
@@ -12805,9 +12805,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["MESSAGES_SEND_TO_ALL"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["MESSAGES_SEND_TO_ALL"], configuration)
 
             if (toChatId !== undefined) {
                 localVarQueryParameter['toChatId'] = toChatId;
@@ -12861,9 +12861,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (range !== undefined) {
                 localVarQueryParameter['range'] = range;
@@ -12948,9 +12948,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -12991,9 +12991,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["MESSAGES_SEND_TO_ASSIGNED"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["MESSAGES_SEND_TO_ASSIGNED"], configuration)
 
 
     
@@ -13040,9 +13040,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["MESSAGES_SEND_TO_ALL", "MESSAGES_SEND_TO_ASSIGNED"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["MESSAGES_SEND_TO_ALL", "MESSAGES_SEND_TO_ASSIGNED"], configuration)
 
             if (requireOpenAccount !== undefined) {
                 localVarQueryParameter['requireOpenAccount'] = requireOpenAccount;
@@ -13101,9 +13101,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -13144,9 +13144,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["MESSAGES_SEARCH"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["MESSAGES_SEARCH"], configuration)
 
             if (accountId) {
                 localVarQueryParameter['accountId'] = accountId;
@@ -13219,9 +13219,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["MESSAGES_SEND_TO_ALL", "MESSAGES_SEND_TO_ASSIGNED"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["MESSAGES_SEND_TO_ALL", "MESSAGES_SEND_TO_ASSIGNED"], configuration)
 
             if (accountId !== undefined) {
                 localVarQueryParameter['accountId'] = accountId;
@@ -13281,9 +13281,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["AUTOCOMPLETE_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
             if (waitForCompletion !== undefined) {
                 localVarQueryParameter['waitForCompletion'] = waitForCompletion;
@@ -13332,9 +13332,9 @@ export const MessagesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (waitForCompletion !== undefined) {
                 localVarQueryParameter['waitForCompletion'] = waitForCompletion;
@@ -14542,9 +14542,9 @@ export const PostsApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (id) {
                 localVarQueryParameter['id'] = id;
@@ -14721,9 +14721,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (token !== undefined) {
                 localVarQueryParameter['token'] = token;
@@ -14766,9 +14766,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_DELETE"], configuration)
 
             if (id) {
                 localVarQueryParameter['id'] = id;
@@ -14897,9 +14897,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_UPDATE"], configuration)
 
             if (id) {
                 localVarQueryParameter['id'] = id;
@@ -14950,9 +14950,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_CREATE"], configuration)
 
             if (accountId !== undefined) {
                 localVarQueryParameter['accountId'] = accountId;
@@ -14973,11 +14973,11 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Trigger sync of the specified products on ChatDaddy with WhatsApp
+         * Trigger sync of the specified products on with WhatsApp
          * @param {string} accountId Account ID to sync products from/to
          * @param {Array<string>} [id] Products to sync with WhatsApp. Leave unspecified to trigger all
-         * @param {boolean} [syncForward] Sync products from ChatDaddy to WhatsApp
-         * @param {boolean} [syncBackward] Sync missing products from WhatsApp to ChatDaddy
+         * @param {boolean} [syncForward] Sync productsto WhatsApp
+         * @param {boolean} [syncBackward] Sync missing products from WhatsApp to Messcat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -14996,9 +14996,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_UPDATE"], configuration)
 
             if (accountId !== undefined) {
                 localVarQueryParameter['accountId'] = accountId;
@@ -15121,11 +15121,11 @@ export const ProductApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Trigger sync of the specified products on ChatDaddy with WhatsApp
+         * Trigger sync of the specified products on with WhatsApp
          * @param {string} accountId Account ID to sync products from/to
          * @param {Array<string>} [id] Products to sync with WhatsApp. Leave unspecified to trigger all
-         * @param {boolean} [syncForward] Sync products from ChatDaddy to WhatsApp
-         * @param {boolean} [syncBackward] Sync missing products from WhatsApp to ChatDaddy
+         * @param {boolean} [syncForward] Sync productsto WhatsApp
+         * @param {boolean} [syncBackward] Sync missing products from WhatsApp to Messcat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -15196,7 +15196,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.platformProductsPost(requestParameters.accountId, requestParameters.platformProductsPostRequest, options).then((request) => request(axios, basePath));
         },
         /**
-         * Trigger sync of the specified products on ChatDaddy with WhatsApp
+         * Trigger sync of the specified products on with WhatsApp
          * @param {ProductApiPlatformProductsSyncRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -15424,14 +15424,14 @@ export interface ProductApiPlatformProductsSyncRequest {
     readonly id?: Array<string>
 
     /**
-     * Sync products from ChatDaddy to WhatsApp
+     * Sync productsto WhatsApp
      * @type {boolean}
      * @memberof ProductApiPlatformProductsSync
      */
     readonly syncForward?: boolean
 
     /**
-     * Sync missing products from WhatsApp to ChatDaddy
+     * Sync missing products from WhatsApp to Messcat
      * @type {boolean}
      * @memberof ProductApiPlatformProductsSync
      */
@@ -15506,7 +15506,7 @@ export class ProductApi extends BaseAPI {
     }
 
     /**
-     * Trigger sync of the specified products on ChatDaddy with WhatsApp
+     * Trigger sync of the specified products on with WhatsApp
      * @param {ProductApiPlatformProductsSyncRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -15552,9 +15552,9 @@ export const ProductCategoriesApiAxiosParamCreator = function (configuration?: C
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_DELETE"], configuration)
 
 
     
@@ -15637,9 +15637,9 @@ export const ProductCategoriesApiAxiosParamCreator = function (configuration?: C
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_UPDATE"], configuration)
 
 
     
@@ -15679,9 +15679,9 @@ export const ProductCategoriesApiAxiosParamCreator = function (configuration?: C
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_CREATE"], configuration)
 
 
     
@@ -15996,9 +15996,9 @@ export const ProfileValidationApiAxiosParamCreator = function (configuration?: C
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_PATCH"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
 
 
     
@@ -16134,9 +16134,9 @@ export const SMSApiAxiosParamCreator = function (configuration?: Configuration) 
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ACCOUNT_PATCH"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
 
 
     
@@ -16365,9 +16365,9 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["TAGS_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["TAGS_DELETE"], configuration)
 
             if (name !== undefined) {
                 localVarQueryParameter['name'] = name;
@@ -16408,9 +16408,9 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["TAGS_READ"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["TAGS_READ"], configuration)
 
             if (q !== undefined) {
                 localVarQueryParameter['q'] = q;
@@ -16465,9 +16465,9 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["TAGS_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["TAGS_CREATE"], configuration)
 
             if (name !== undefined) {
                 localVarQueryParameter['name'] = name;
@@ -16510,9 +16510,9 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["TAGS_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["TAGS_CREATE"], configuration)
 
             if (name !== undefined) {
                 localVarQueryParameter['name'] = name;
@@ -16839,9 +16839,9 @@ export const TemplatesApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["TEMPLATES_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["TEMPLATES_CREATE"], configuration)
 
 
     
@@ -16878,9 +16878,9 @@ export const TemplatesApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["TEMPLATES_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["TEMPLATES_CREATE"], configuration)
 
 
     

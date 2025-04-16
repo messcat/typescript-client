@@ -3,8 +3,8 @@ const BASE_PATH = "https://replace.your.own.url.here".replace(/\/+$/, "");
 /* tslint:disable */
 /* eslint-disable */
 /**
- * ChatDaddy Shop Integration Spec
- * This is the OpenAPI specification for the ChatDaddy Shop Integration. When integrating with ChatDaddy, implement a spec that follows this specification. Then, provide the URL to your hosted implementation on ChatDaddy.  The job of every integration will be to: 1. define parameters for authentication & a JSON schema spec for the data points (orders) that will be sent to the EasySend service 2. handle authentication when easysend service requests a new \"tracking\" for an integration 3. handle polling or receiving webhooks from the provider to get new orders, and then send them to the Shop service via the `dataPatch` operation. 4. the implementation must also let the Shop service know if the tracking\'s authentication has failed, and new data cannot be fetched via the `trackingUpdateErrorState` operation. 5. optionally, handle retreiving product listing from the provider  It is recommended to use the [ChatDaddy client](https://github.com/chatdaddy/typescript-client) to make the API calls. 
+ * Shop Integration Spec
+ * This is the OpenAPI specification for the Shop Integration. When integrating with Messcat, implement a spec that follows this specification. Then, provide the URL to your hosted implementation on Messcat.  The job of every integration will be to: 1. define parameters for authentication & a JSON schema spec for the data points (orders) that will be sent to the EasySend service 2. handle authentication when easysend service requests a new \"tracking\" for an integration 3. handle polling or receiving webhooks from the provider to get new orders, and then send them to the Shop service via the `dataPatch` operation. 4. the implementation must also let the Shop service know if the tracking\'s authentication has failed, and new data cannot be fetched via the `trackingUpdateErrorState` operation. 5. optionally, handle retreiving product listing from the provider  It is recommended to use the [client](https://github.com/messcat/typescript-client) to make the API calls. 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -976,9 +976,9 @@ export const ShopIntegrationApiAxiosParamCreator = function (configuration?: Con
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -1017,9 +1017,9 @@ export const ShopIntegrationApiAxiosParamCreator = function (configuration?: Con
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -1087,9 +1087,9 @@ export const ShopIntegrationApiAxiosParamCreator = function (configuration?: Con
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (limit !== undefined) {
                 localVarQueryParameter['limit'] = limit;

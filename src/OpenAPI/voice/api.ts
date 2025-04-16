@@ -1,10 +1,10 @@
-const BASE_PATH = "https://api.chatdaddy.tech/voice".replace(/\/+$/, "");
+const BASE_PATH = "https://api.messcat.ai/voice".replace(/\/+$/, "");
 
 /* tslint:disable */
 /* eslint-disable */
 /**
- * ChatDaddy Voice Service
- * Place and receive voice calls from Chatdaddy via WebSockets 
+ * Voice Service
+ * Place and receive voice callsvia WebSockets 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -676,7 +676,7 @@ export interface VerifyNumberPostRequest {
      */
     'phoneNumber': string;
     /**
-     * Flag for whether or not the number was purchased from chatdaddy
+     * Flag for whether or not the number was pre-purchased
      * @type {boolean}
      * @memberof VerifyNumberPostRequest
      */
@@ -715,9 +715,9 @@ export const CallsApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -760,9 +760,9 @@ export const CallsApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (q !== undefined) {
                 localVarQueryParameter['q'] = q;
@@ -835,9 +835,9 @@ export const CallsApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (waitForCompletion !== undefined) {
                 localVarQueryParameter['waitForCompletion'] = waitForCompletion;
@@ -874,9 +874,9 @@ export const CallsApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -912,9 +912,9 @@ export const CallsApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CALL_PHONE_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CALL_PHONE_DELETE"], configuration)
 
 
     
@@ -950,9 +950,9 @@ export const CallsApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (q !== undefined) {
                 localVarQueryParameter['q'] = q;
@@ -992,9 +992,9 @@ export const CallsApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -1061,9 +1061,9 @@ export const CallsApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CALL_PHONE_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CALL_PHONE_CREATE"], configuration)
 
 
     

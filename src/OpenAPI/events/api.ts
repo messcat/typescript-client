@@ -1,10 +1,10 @@
-const BASE_PATH = "https://api.chatdaddy.tech/events".replace(/\/+$/, "");
+const BASE_PATH = "https://api.messcat.ai/events".replace(/\/+$/, "");
 
 /* tslint:disable */
 /* eslint-disable */
 /**
- * ChatDaddy Events Service
- * Receive live events from ChatDaddy via a WebSocket or register a web hook 
+ * Events Service
+ * Receive live eventsvia a WebSocket or register a web hook 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -10909,7 +10909,7 @@ export interface ShopproductInsertDataAccountSyncStatusesInner {
      */
     'lastSyncDate': string | null;
     /**
-     * Id of the team member that syncs the product from chatdaddy->WhatsApp
+     * Id of the team member that syncs the product from platform->WhatsApp
      * @type {string}
      * @memberof ShopproductInsertDataAccountSyncStatusesInner
      */
@@ -11500,7 +11500,7 @@ export const TeamInsertDataScopesEnum = {
     GroupsCreate: 'GROUPS_CREATE',
     GroupsUpdate: 'GROUPS_UPDATE',
     CreateNotes: 'CREATE_NOTES',
-    ChatdaddyHook: 'CHATDADDY_HOOK',
+    WebhookCrud: 'WEBHOOK_CRUD',
     NotificationRead: 'NOTIFICATION_READ',
     NotificationCreate: 'NOTIFICATION_CREATE',
     NotificationUpdate: 'NOTIFICATION_UPDATE',
@@ -11933,7 +11933,7 @@ export const TeamUpdateDataScopesEnum = {
     GroupsCreate: 'GROUPS_CREATE',
     GroupsUpdate: 'GROUPS_UPDATE',
     CreateNotes: 'CREATE_NOTES',
-    ChatdaddyHook: 'CHATDADDY_HOOK',
+    WebhookCrud: 'WEBHOOK_CRUD',
     NotificationRead: 'NOTIFICATION_READ',
     NotificationCreate: 'NOTIFICATION_CREATE',
     NotificationUpdate: 'NOTIFICATION_UPDATE',
@@ -12134,7 +12134,7 @@ export const TeammemberInsertDataScopesEnum = {
     GroupsCreate: 'GROUPS_CREATE',
     GroupsUpdate: 'GROUPS_UPDATE',
     CreateNotes: 'CREATE_NOTES',
-    ChatdaddyHook: 'CHATDADDY_HOOK',
+    WebhookCrud: 'WEBHOOK_CRUD',
     NotificationRead: 'NOTIFICATION_READ',
     NotificationCreate: 'NOTIFICATION_CREATE',
     NotificationUpdate: 'NOTIFICATION_UPDATE',
@@ -12343,7 +12343,7 @@ export const TeammemberUpdateDataScopesEnum = {
     GroupsCreate: 'GROUPS_CREATE',
     GroupsUpdate: 'GROUPS_UPDATE',
     CreateNotes: 'CREATE_NOTES',
-    ChatdaddyHook: 'CHATDADDY_HOOK',
+    WebhookCrud: 'WEBHOOK_CRUD',
     NotificationRead: 'NOTIFICATION_READ',
     NotificationCreate: 'NOTIFICATION_CREATE',
     NotificationUpdate: 'NOTIFICATION_UPDATE',
@@ -13577,9 +13577,9 @@ export const AlarmsApiAxiosParamCreator = function (configuration?: Configuratio
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ADMIN_PANEL_ACCESS"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ADMIN_PANEL_ACCESS"], configuration)
 
 
     
@@ -13748,9 +13748,9 @@ export const EventSubscriptionApiAxiosParamCreator = function (configuration?: C
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CHATDADDY_HOOK"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["WEBHOOK_CRUD"], configuration)
 
 
     
@@ -13786,9 +13786,9 @@ export const EventSubscriptionApiAxiosParamCreator = function (configuration?: C
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CHATDADDY_HOOK"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["WEBHOOK_CRUD"], configuration)
 
             if (type !== undefined) {
                 localVarQueryParameter['type'] = type;
@@ -13841,9 +13841,9 @@ export const EventSubscriptionApiAxiosParamCreator = function (configuration?: C
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ADMIN_PANEL_ACCESS"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ADMIN_PANEL_ACCESS"], configuration)
 
 
     
@@ -13883,9 +13883,9 @@ export const EventSubscriptionApiAxiosParamCreator = function (configuration?: C
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CHATDADDY_HOOK"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["WEBHOOK_CRUD"], configuration)
 
 
     
@@ -13921,9 +13921,9 @@ export const EventSubscriptionApiAxiosParamCreator = function (configuration?: C
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CHATDADDY_HOOK"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["WEBHOOK_CRUD"], configuration)
 
 
     
@@ -14329,7 +14329,7 @@ export class EventSubscriptionApi extends BaseAPI {
 export const WebSocketApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Connect to this route to receive live events from ChatDaddy via a WebSocket.
+         * Connect to this route to receive live eventsvia a WebSocket.
          * @summary The WebSocket Route
          * @param {string} accessToken the JWT authorization token
          * @param {Array<EventName>} events Events to subscribe to
@@ -14354,9 +14354,9 @@ export const WebSocketApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (accessToken !== undefined) {
                 localVarQueryParameter['accessToken'] = accessToken;
@@ -14382,7 +14382,7 @@ export const WebSocketApiAxiosParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Connect to this route to receive live events from ChatDaddy via a WebSocket. This route is deprecated, use `/ws` instead.
+         * Connect to this route to receive live eventsvia a WebSocket. This route is deprecated, use `/ws` instead.
          * @summary The WebSocket Route
          * @param {string} accessToken the JWT authorization token
          * @param {Array<EventName>} events Events to subscribe to
@@ -14408,9 +14408,9 @@ export const WebSocketApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
             if (accessToken !== undefined) {
                 localVarQueryParameter['accessToken'] = accessToken;
@@ -14446,7 +14446,7 @@ export const WebSocketApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = WebSocketApiAxiosParamCreator(configuration)
     return {
         /**
-         * Connect to this route to receive live events from ChatDaddy via a WebSocket.
+         * Connect to this route to receive live eventsvia a WebSocket.
          * @summary The WebSocket Route
          * @param {string} accessToken the JWT authorization token
          * @param {Array<EventName>} events Events to subscribe to
@@ -14461,7 +14461,7 @@ export const WebSocketApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Connect to this route to receive live events from ChatDaddy via a WebSocket. This route is deprecated, use `/ws` instead.
+         * Connect to this route to receive live eventsvia a WebSocket. This route is deprecated, use `/ws` instead.
          * @summary The WebSocket Route
          * @param {string} accessToken the JWT authorization token
          * @param {Array<EventName>} events Events to subscribe to
@@ -14487,7 +14487,7 @@ export const WebSocketApiFactory = function (configuration?: Configuration, base
     const localVarFp = WebSocketApiFp(configuration)
     return {
         /**
-         * Connect to this route to receive live events from ChatDaddy via a WebSocket.
+         * Connect to this route to receive live eventsvia a WebSocket.
          * @summary The WebSocket Route
          * @param {WebSocketApiWsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -14497,7 +14497,7 @@ export const WebSocketApiFactory = function (configuration?: Configuration, base
             return localVarFp.ws(requestParameters.accessToken, requestParameters.events, requestParameters.accounts, options).then((request) => request(axios, basePath));
         },
         /**
-         * Connect to this route to receive live events from ChatDaddy via a WebSocket. This route is deprecated, use `/ws` instead.
+         * Connect to this route to receive live eventsvia a WebSocket. This route is deprecated, use `/ws` instead.
          * @summary The WebSocket Route
          * @param {WebSocketApiWsLegacyRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -14574,7 +14574,7 @@ export interface WebSocketApiWsLegacyRequest {
  */
 export class WebSocketApi extends BaseAPI {
     /**
-     * Connect to this route to receive live events from ChatDaddy via a WebSocket.
+     * Connect to this route to receive live eventsvia a WebSocket.
      * @summary The WebSocket Route
      * @param {WebSocketApiWsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -14586,7 +14586,7 @@ export class WebSocketApi extends BaseAPI {
     }
 
     /**
-     * Connect to this route to receive live events from ChatDaddy via a WebSocket. This route is deprecated, use `/ws` instead.
+     * Connect to this route to receive live eventsvia a WebSocket. This route is deprecated, use `/ws` instead.
      * @summary The WebSocket Route
      * @param {WebSocketApiWsLegacyRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -14608,7 +14608,7 @@ export class WebSocketApi extends BaseAPI {
 export const WebhookExampleApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Example of what to expect from a ChatDaddy Webhook, this is not a real route. Points to keep in mind: - the request body you\'ll receive in the webhook will   match the request body shown in this route - there will be a chatdaddy token in the headers with no scopes - a POST request will be made to the url - ChatDaddy expects a 200 response to mark a successful delivery 
+         * Example of what to expect from a Webhook, this is not a real route. Points to keep in mind: - the request body you\'ll receive in the webhook will   match the request body shown in this route - there will be a token in the headers with no scopes - a POST request will be made to the url - expects a 200 response to mark a successful delivery 
          * @param {EventWebhookData} [eventWebhookData] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -14651,7 +14651,7 @@ export const WebhookExampleApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = WebhookExampleApiAxiosParamCreator(configuration)
     return {
         /**
-         * Example of what to expect from a ChatDaddy Webhook, this is not a real route. Points to keep in mind: - the request body you\'ll receive in the webhook will   match the request body shown in this route - there will be a chatdaddy token in the headers with no scopes - a POST request will be made to the url - ChatDaddy expects a 200 response to mark a successful delivery 
+         * Example of what to expect from a Webhook, this is not a real route. Points to keep in mind: - the request body you\'ll receive in the webhook will   match the request body shown in this route - there will be a token in the headers with no scopes - a POST request will be made to the url - expects a 200 response to mark a successful delivery 
          * @param {EventWebhookData} [eventWebhookData] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -14673,7 +14673,7 @@ export const WebhookExampleApiFactory = function (configuration?: Configuration,
     const localVarFp = WebhookExampleApiFp(configuration)
     return {
         /**
-         * Example of what to expect from a ChatDaddy Webhook, this is not a real route. Points to keep in mind: - the request body you\'ll receive in the webhook will   match the request body shown in this route - there will be a chatdaddy token in the headers with no scopes - a POST request will be made to the url - ChatDaddy expects a 200 response to mark a successful delivery 
+         * Example of what to expect from a Webhook, this is not a real route. Points to keep in mind: - the request body you\'ll receive in the webhook will   match the request body shown in this route - there will be a token in the headers with no scopes - a POST request will be made to the url - expects a 200 response to mark a successful delivery 
          * @param {WebhookExampleApiWebhookExampleRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -14706,7 +14706,7 @@ export interface WebhookExampleApiWebhookExampleRequest {
  */
 export class WebhookExampleApi extends BaseAPI {
     /**
-     * Example of what to expect from a ChatDaddy Webhook, this is not a real route. Points to keep in mind: - the request body you\'ll receive in the webhook will   match the request body shown in this route - there will be a chatdaddy token in the headers with no scopes - a POST request will be made to the url - ChatDaddy expects a 200 response to mark a successful delivery 
+     * Example of what to expect from a Webhook, this is not a real route. Points to keep in mind: - the request body you\'ll receive in the webhook will   match the request body shown in this route - there will be a token in the headers with no scopes - a POST request will be made to the url - expects a 200 response to mark a successful delivery 
      * @param {WebhookExampleApiWebhookExampleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

@@ -1,9 +1,9 @@
-const BASE_PATH = "https://api.chatdaddy.tech/notifications".replace(/\/+$/, "");
+const BASE_PATH = "https://api.messcat.ai/notifications".replace(/\/+$/, "");
 
 /* tslint:disable */
 /* eslint-disable */
 /**
- * ChatDaddy Shop Service
+ * Shop Service
  * Responsible for all shop related APIs. Formerly known as \"notifications\" or \"easysend\" service 
  *
  * The version of the OpenAPI document: 2.1.1
@@ -466,7 +466,7 @@ export interface DataResend200Response {
  * @export
  * @interface DataType
  */
-interface DataType {
+export interface DataType {
     /**
      * 
      * @type {string}
@@ -1120,7 +1120,7 @@ export interface PatchServiceModel {
  * @export
  * @interface PaymentIntegration
  */
-interface PaymentIntegration {
+export interface PaymentIntegration {
     /**
      * 
      * @type {string}
@@ -1519,7 +1519,7 @@ export interface PaymentRecordsGet200Response {
  * @export
  * @interface PaymentSystem
  */
-interface PaymentSystem {
+export interface PaymentSystem {
     /**
      * 
      * @type {string}
@@ -1570,19 +1570,19 @@ interface PaymentSystem {
     'logoImageUrl'?: string;
 }
 
-const PaymentSystemTypeEnum = {
+export const PaymentSystemTypeEnum = {
     Qr: 'qr',
     Url: 'url'
 } as const;
 
-type PaymentSystemTypeEnum = typeof PaymentSystemTypeEnum[keyof typeof PaymentSystemTypeEnum];
+export type PaymentSystemTypeEnum = typeof PaymentSystemTypeEnum[keyof typeof PaymentSystemTypeEnum];
 
 /**
  * 
  * @export
  * @interface PaymentSystemAuth
  */
-interface PaymentSystemAuth {
+export interface PaymentSystemAuth {
     /**
      * URL to redirect user to in order to authorize the payment system integration
      * @type {string}
@@ -1708,7 +1708,7 @@ export interface ProductAccountSync {
      */
     'lastSyncDate': string | null;
     /**
-     * Id of the team member that syncs the product from chatdaddy->WhatsApp
+     * Id of the team member that syncs the product from platform->WhatsApp
      * @type {string}
      * @memberof ProductAccountSync
      */
@@ -2878,9 +2878,9 @@ export const AdminApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ADMIN_PANEL_ACCESS"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ADMIN_PANEL_ACCESS"], configuration)
 
             if (teamId) {
                 localVarQueryParameter['teamId'] = teamId;
@@ -2903,7 +2903,7 @@ export const AdminApiAxiosParamCreator = function (configuration?: Configuration
         },
         /**
          * 
-         * @summary Add/Update Payment system supported by chatdaddy
+         * @summary Add/Update Payment system supported
          * @param {PaymentSystem} [paymentSystem] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2921,9 +2921,9 @@ export const AdminApiAxiosParamCreator = function (configuration?: Configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ADMIN_PANEL_ACCESS"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ADMIN_PANEL_ACCESS"], configuration)
 
 
     
@@ -2965,7 +2965,7 @@ export const AdminApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Add/Update Payment system supported by chatdaddy
+         * @summary Add/Update Payment system supported
          * @param {PaymentSystem} [paymentSystem] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2998,7 +2998,7 @@ export const AdminApiFactory = function (configuration?: Configuration, basePath
         },
         /**
          * 
-         * @summary Add/Update Payment system supported by chatdaddy
+         * @summary Add/Update Payment system supported
          * @param {AdminApiAdminPaymentSystemPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3065,7 +3065,7 @@ export class AdminApi extends BaseAPI {
 
     /**
      * 
-     * @summary Add/Update Payment system supported by chatdaddy
+     * @summary Add/Update Payment system supported
      * @param {AdminApiAdminPaymentSystemPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -3158,9 +3158,9 @@ export const EventsApiAxiosParamCreator = function (configuration?: Configuratio
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["NOTIFICATION_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["NOTIFICATION_UPDATE"], configuration)
 
 
     
@@ -3429,9 +3429,9 @@ export const PaymentIntegrationsApiAxiosParamCreator = function (configuration?:
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PAYMENT_INTEGRATION_WRITE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PAYMENT_INTEGRATION_WRITE"], configuration)
 
 
     
@@ -3469,9 +3469,9 @@ export const PaymentIntegrationsApiAxiosParamCreator = function (configuration?:
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PAYMENT_INTEGRATION_WRITE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PAYMENT_INTEGRATION_WRITE"], configuration)
 
             if (id) {
                 localVarQueryParameter['id'] = id;
@@ -3564,9 +3564,9 @@ export const PaymentIntegrationsApiAxiosParamCreator = function (configuration?:
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PAYMENT_INTEGRATION_WRITE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PAYMENT_INTEGRATION_WRITE"], configuration)
 
 
     
@@ -3673,9 +3673,9 @@ export const PaymentIntegrationsApiAxiosParamCreator = function (configuration?:
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PAYMENT_INTEGRATION_WRITE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PAYMENT_INTEGRATION_WRITE"], configuration)
 
 
     
@@ -4139,9 +4139,9 @@ export const PaymentRecordsApiAxiosParamCreator = function (configuration?: Conf
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PAYMENT_RECORDS_WRITE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PAYMENT_RECORDS_WRITE"], configuration)
 
 
     
@@ -4182,9 +4182,9 @@ export const PaymentRecordsApiAxiosParamCreator = function (configuration?: Conf
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PAYMENT_RECORDS_READ"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PAYMENT_RECORDS_READ"], configuration)
 
             if (pageSize !== undefined) {
                 localVarQueryParameter['pageSize'] = pageSize;
@@ -4600,9 +4600,9 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["INTEGRATIONS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["INTEGRATIONS_UPDATE"], configuration)
 
 
     
@@ -4634,9 +4634,9 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", [], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
 
 
     
@@ -4673,9 +4673,9 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["INTEGRATIONS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["INTEGRATIONS_UPDATE"], configuration)
 
 
     
@@ -4711,9 +4711,9 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["INTEGRATIONS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["INTEGRATIONS_UPDATE"], configuration)
 
 
     
@@ -4748,9 +4748,9 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["INTEGRATIONS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["INTEGRATIONS_UPDATE"], configuration)
 
 
     
@@ -5084,9 +5084,9 @@ export const ShopMetadataApiAxiosParamCreator = function (configuration?: Config
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["INTEGRATIONS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["INTEGRATIONS_UPDATE"], configuration)
 
             if (id !== undefined) {
                 localVarQueryParameter['id'] = id;
@@ -5364,9 +5364,9 @@ export const ShopProductCategoriesApiAxiosParamCreator = function (configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_DELETE"], configuration)
 
 
     
@@ -5400,9 +5400,9 @@ export const ShopProductCategoriesApiAxiosParamCreator = function (configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_GET"], configuration)
 
             if (id) {
                 localVarQueryParameter['id'] = id;
@@ -5443,9 +5443,9 @@ export const ShopProductCategoriesApiAxiosParamCreator = function (configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_CREATE"], configuration)
 
 
     
@@ -5484,9 +5484,9 @@ export const ShopProductCategoriesApiAxiosParamCreator = function (configuration
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_UPDATE"], configuration)
 
 
     
@@ -5769,9 +5769,9 @@ export const ShopProductsApiAxiosParamCreator = function (configuration?: Config
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_DELETE"], configuration)
 
             if (id) {
                 localVarQueryParameter['id'] = id;
@@ -5812,9 +5812,9 @@ export const ShopProductsApiAxiosParamCreator = function (configuration?: Config
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_UPDATE"], configuration)
 
 
     
@@ -5857,9 +5857,9 @@ export const ShopProductsApiAxiosParamCreator = function (configuration?: Config
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_GET"], configuration)
 
             if (category) {
                 localVarQueryParameter['category'] = category;
@@ -5924,9 +5924,9 @@ export const ShopProductsApiAxiosParamCreator = function (configuration?: Config
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_CREATE"], configuration)
 
 
     
@@ -5943,7 +5943,7 @@ export const ShopProductsApiAxiosParamCreator = function (configuration?: Config
             };
         },
         /**
-         * Trigger sync of the specified products on ChatDaddy with WhatsApp
+         * Trigger sync of the specified products with WhatsApp
          * @param {string | null} accountId Account ID to sync products from/to
          * @param {string} id Product id to sync with WhatsApp.
          * @param {*} [options] Override http request option.
@@ -5967,9 +5967,9 @@ export const ShopProductsApiAxiosParamCreator = function (configuration?: Config
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_UPDATE"], configuration)
 
             if (accountId !== undefined) {
                 localVarQueryParameter['accountId'] = accountId;
@@ -6057,7 +6057,7 @@ export const ShopProductsApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Trigger sync of the specified products on ChatDaddy with WhatsApp
+         * Trigger sync of the specified products with WhatsApp
          * @param {string | null} accountId Account ID to sync products from/to
          * @param {string} id Product id to sync with WhatsApp.
          * @param {*} [options] Override http request option.
@@ -6120,7 +6120,7 @@ export const ShopProductsApiFactory = function (configuration?: Configuration, b
             return localVarFp.shopProductsPost(requestParameters.shopProductCreate, options).then((request) => request(axios, basePath));
         },
         /**
-         * Trigger sync of the specified products on ChatDaddy with WhatsApp
+         * Trigger sync of the specified products with WhatsApp
          * @param {ShopProductsApiShopProductsSyncRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -6320,7 +6320,7 @@ export class ShopProductsApi extends BaseAPI {
     }
 
     /**
-     * Trigger sync of the specified products on ChatDaddy with WhatsApp
+     * Trigger sync of the specified products with WhatsApp
      * @param {ShopProductsApiShopProductsSyncRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -6378,9 +6378,9 @@ export const TrackingProductsApiAxiosParamCreator = function (configuration?: Co
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["PRODUCTS_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["PRODUCTS_GET"], configuration)
 
 
     
@@ -6516,9 +6516,9 @@ export const TrackingsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["NOTIFICATION_READ"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["NOTIFICATION_READ"], configuration)
 
             if (trackingId !== undefined) {
                 localVarQueryParameter['trackingId'] = trackingId;
@@ -6632,9 +6632,9 @@ export const TrackingsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["NOTIFICATION_READ"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["NOTIFICATION_READ"], configuration)
 
             if (trackingId !== undefined) {
                 localVarQueryParameter['trackingId'] = trackingId;
@@ -6727,9 +6727,9 @@ export const TrackingsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["NOTIFICATION_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["NOTIFICATION_DELETE"], configuration)
 
 
     
@@ -6769,9 +6769,9 @@ export const TrackingsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["NOTIFICATION_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["NOTIFICATION_UPDATE"], configuration)
 
 
     
@@ -6810,9 +6810,9 @@ export const TrackingsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["NOTIFICATION_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["NOTIFICATION_DELETE"], configuration)
 
 
     
@@ -6844,9 +6844,9 @@ export const TrackingsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["NOTIFICATION_READ"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["NOTIFICATION_READ"], configuration)
 
 
     
@@ -6883,9 +6883,9 @@ export const TrackingsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["NOTIFICATION_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["NOTIFICATION_UPDATE"], configuration)
 
 
     
@@ -6921,9 +6921,9 @@ export const TrackingsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["NOTIFICATION_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["NOTIFICATION_CREATE"], configuration)
 
 
     
@@ -7005,9 +7005,9 @@ export const TrackingsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["NOTIFICATION_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["NOTIFICATION_UPDATE"], configuration)
 
             if (recipientPhoneNumber !== undefined) {
                 localVarQueryParameter['recipientPhoneNumber'] = recipientPhoneNumber;

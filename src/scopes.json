@@ -585,7 +585,7 @@
 		"section": "inbox",
 		"group": "Notes"
 	},
-	"CHATDADDY_HOOK": {
+	"WEBHOOK_CRUD": {
 		"number": 65,
 		"description": "Read/Update API Web hooks",
 		"features": [],

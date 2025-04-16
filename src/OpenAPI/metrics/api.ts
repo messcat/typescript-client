@@ -1,9 +1,9 @@
-const BASE_PATH = "https://api.chatdaddy.tech/metrics".replace(/\/+$/, "");
+const BASE_PATH = "https://api.messcat.ai/metrics".replace(/\/+$/, "");
 
 /* tslint:disable */
 /* eslint-disable */
 /**
- * ChatDaddy Metrics Service
+ * Metrics Service
  * Query aggregate metrics
  *
  * The version of the OpenAPI document: 1.0.0
@@ -1443,9 +1443,9 @@ export const DashboardApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["DASHBOARD_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["DASHBOARD_CREATE"], configuration)
 
             if (version !== undefined) {
                 localVarQueryParameter['version'] = version;
@@ -1488,9 +1488,9 @@ export const DashboardApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["DASHBOARD_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["DASHBOARD_DELETE"], configuration)
 
 
     
@@ -1531,9 +1531,9 @@ export const DashboardApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ADMIN_PANEL_ACCESS", "PARTNER_ADMIN_PANEL_ACCESS"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ADMIN_PANEL_ACCESS", "PARTNER_ADMIN_PANEL_ACCESS"], configuration)
 
             if (teamIds) {
                 localVarQueryParameter['teamIds'] = teamIds;
@@ -1595,9 +1595,9 @@ export const DashboardApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["ADMIN_PANEL_ACCESS"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["ADMIN_PANEL_ACCESS"], configuration)
 
             if (period !== undefined) {
                 localVarQueryParameter['period'] = period;
@@ -1645,9 +1645,9 @@ export const DashboardApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["METRICS_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["METRICS_GET"], configuration)
 
             if (id !== undefined) {
                 localVarQueryParameter['id'] = id;
@@ -1705,9 +1705,9 @@ export const DashboardApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["METRICS_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["METRICS_GET"], configuration)
 
             if (period !== undefined) {
                 localVarQueryParameter['period'] = period;
@@ -1762,9 +1762,9 @@ export const DashboardApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["METRICS_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["METRICS_GET"], configuration)
 
 
     
@@ -1805,9 +1805,9 @@ export const DashboardApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["METRICS_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["METRICS_GET"], configuration)
 
             if (id !== undefined) {
                 localVarQueryParameter['id'] = id;
@@ -1864,9 +1864,9 @@ export const DashboardApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["METRICS_GET"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["METRICS_GET"], configuration)
 
 
     

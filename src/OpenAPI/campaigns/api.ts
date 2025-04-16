@@ -1,9 +1,9 @@
-const BASE_PATH = "https://api.chatdaddy.tech/campaigns".replace(/\/+$/, "");
+const BASE_PATH = "https://api.messcat.ai/campaigns".replace(/\/+$/, "");
 
 /* tslint:disable */
 /* eslint-disable */
 /**
- * ChatDaddy Campaigns Service
+ * Campaigns Service
  * Make & run campaigns
  *
  * The version of the OpenAPI document: 0.3.0
@@ -729,9 +729,9 @@ export const CampaignsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CAMPAIGNS_CREATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CAMPAIGNS_CREATE"], configuration)
 
 
     
@@ -770,9 +770,9 @@ export const CampaignsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CAMPAIGNS_READ"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CAMPAIGNS_READ"], configuration)
 
 
     
@@ -808,9 +808,9 @@ export const CampaignsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CAMPAIGNS_DELETE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CAMPAIGNS_DELETE"], configuration)
 
 
     
@@ -850,9 +850,9 @@ export const CampaignsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CAMPAIGNS_READ"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CAMPAIGNS_READ"], configuration)
 
             if (count !== undefined) {
                 localVarQueryParameter['count'] = count;
@@ -907,9 +907,9 @@ export const CampaignsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CAMPAIGNS_READ"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CAMPAIGNS_READ"], configuration)
 
             if (count !== undefined) {
                 localVarQueryParameter['count'] = count;
@@ -974,9 +974,9 @@ export const CampaignsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CAMPAIGNS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CAMPAIGNS_UPDATE"], configuration)
 
 
     
@@ -1014,9 +1014,9 @@ export const CampaignsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CAMPAIGNS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CAMPAIGNS_UPDATE"], configuration)
 
 
     
@@ -1051,9 +1051,9 @@ export const CampaignsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication chatdaddy required
+            // authentication token required
             // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "chatdaddy", ["CAMPAIGNS_UPDATE"], configuration)
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CAMPAIGNS_UPDATE"], configuration)
 
 
     
