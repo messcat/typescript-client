@@ -1,27 +1,27 @@
-# ChatDaddy Typescript Client
+# Messcat Typescript Client
 
-Typescript client for interacting with all ChatDaddy services.
-You can use this client to authenticate, send & receive messages, update chats, create groups & everything you expect from the ChatDaddy APIs.
+Typescript client for interacting with all Messcat services.
+You can use this client to authenticate, send & receive messages, update chats, create groups & everything you expect from the Messcat APIs.
 
 ## API Docs
 
-You can find the full API docs for the service [here](https://chatdaddy.stoplight.io/docs/openapi/YXBpOjMwMzA3ODYy-instant-messaging-service)
+You can find the full API docs for the service [here](https://messcat.stoplight.io/docs/openapi/YXBpOjMwMzA3ODYy-instant-messaging-service)
 
 ## Installing the Client
 
 Using NPM:
 ```
-npm i git+https://github.com/chatdaddy/typescript-client
+npm i git+https://github.com/messcat/typescript-client
 ```
 
 Using yarn:
 ```
-yarn add git+https://github.com/chatdaddy/typescript-client
+yarn add git+https://github.com/messcat/typescript-client
 ```
 
 You can then import in your code like:
 ``` ts
-import { MessagesApi } from '@chatdaddy/client'
+import { MessagesApi } from '@messcat/client'
 ```
 
 
@@ -31,14 +31,14 @@ We recommend you use refresh tokens to generate these short lived access tokens.
 
 You do have to use your password to generate a refresh token.
 ``` ts
-import { OAuthApi, encodeSHA256 } from '@chatdaddy/client'
+import { OAuthApi, encodeSHA256 } from '@messcat/client'
 
 const getRefreshToken = async() => {
 	const oAuthApi = new OAuthApi()
 	const {
       data: { refresh_token },
     } = await oAuthApi.tokenPost({
-      phoneNumber: 85212345678, // use your own ChatDaddy registered phone number
+      phoneNumber: 85212345678, // use your own Messcat registered phone number
 	  password: encodeSHA256('plaintextPassword'), // pass the SHA encoded password
       returnRefreshToken: true,
     })
@@ -49,13 +49,13 @@ console.log(getRefreshToken()) // prints something like "676be3ff-8d6e-4e74-8b0a
 
 ## Generating Access Tokens and Using Them
 
-All of ChatDaddy's APIs rely on a single access point using the short lived JWT access token. The access token's schema can be read about [here](https://chatdaddy.stoplight.io/docs/openapi/repos/chatdaddy-service-auth/openapi.yaml/components/schemas/JWT).
+All of Messcat's APIs rely on a single access point using the short lived JWT access token. The access token's schema can be read about [here](https://messcat.stoplight.io/docs/openapi/repos/service-auth/openapi.yaml/components/schemas/JWT).
 
 Presently, all access tokens last for **1 hour**.
 
 This SDK includes functions to easily generate and persist access tokens from refresh tokens
 ``` ts
-import { makeAccessTokenFactory, MessagesApi } from '@chatdaddy/client'
+import { makeAccessTokenFactory, MessagesApi } from '@messcat/client'
 // create a factory that takes care of auto-renewing access tokens when they expire
 const getToken = makeAccessTokenFactory({
 	request: {
@@ -89,16 +89,16 @@ const getToken = makeAccessTokenFactory({
 ```
 
 ## API Tokens
-In case you want to use the ChatDaddy API in an environment where you cannot easily generate access tokens from the refresh token, you can use an API token. Use these tokens with caution as they never expire. We recommend you use access tokens as they are more secure.
+In case you want to use the Messcat API in an environment where you cannot easily generate access tokens from the refresh token, you can use an API token. Use these tokens with caution as they never expire. We recommend you use access tokens as they are more secure.
 
-You can generate API tokens here: https://www.app.chatdaddy.tech/developer/apiToken with the scopes you require.
+You can generate API tokens here: https://www.app.messcat.ai/developer/apiToken with the scopes you require.
 
 For examples of how to use API tokens, see the [api-token.ts](/examples/api-token.ts) example.
 
 ## Finding Out your Team ID
 
-1. Login & open ChatDaddy App from `https://app.chatdaddy.tech`
-2. Navigate to `https://app.chatdaddy.tech/settings/api`
+1. Login & open Messcat App from `https://app.messcat.ai`
+2. Navigate to `https://app.messcat.ai/settings/api`
 3. Copy team ID from there
 
 Example:
@@ -114,11 +114,11 @@ The library has a list of examples of how to use this client, you can find them 
 2. Run `yarn` or `npm i` (whichever package you prefer)
 3. Create a `.env` file in the repository folder with the following params:
 	```
-	REFRESH_TOKEN=<chatdaddy refresh token>
-	TEAM_ID=<chatdaddy team id>
+	REFRESH_TOKEN=<refresh token>
+	TEAM_ID=<team id>
 	```
 
-	You can get this information from the [API page](https://app.chatdaddy.tech/settings/api) on ChatDaddy.
+	You can get this information from the [API page](https://app.messcat.ai/settings/api) on Messcat.
 3. Run example scripts using `yarn ts-node examples/{example-script}`
 	- Eg. `yarn ts-node examples/send-message`
 

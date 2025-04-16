@@ -33,7 +33,7 @@ async function main() {
         key: message.decryption?.keys!['enc']!,
         iv: message.decryption?.keys!['iv']!
     })
-	const res = await fetch(`https://api.chatdaddy.tech/transcoder/transcode/aes-256-cbc-decrypt?${query.toString()}`, {
+	const res = await fetch(`https://api.messcat.ai/transcoder/transcode/aes-256-cbc-decrypt?${query.toString()}`, {
         headers: {
             'Authorization': `Bearer ${accessToken}`
         }

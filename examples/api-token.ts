@@ -27,7 +27,7 @@ async function rawApiUsage() {
         throw new Error('API_TOKEN not specified')
     }
 
-    const response = await fetch('https://api.chatdaddy.tech/im/accounts', {
+    const response = await fetch('https://api.messcat.ai/im/accounts', {
         headers: {
             'Authorization': `Bearer ${API_TOKEN}`
         }

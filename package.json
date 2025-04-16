@@ -1,5 +1,5 @@
 {
-  "name": "@chatdaddy/client",
+  "name": "@messcat/client",
   "version": "0.1.0",
   "main": "lib/index",
   "files": [
