@@ -175,100 +175,6 @@ export type AccountAssignType = typeof AccountAssignType[keyof typeof AccountAss
 
 
 /**
- * @type AccountCredentialsAlibaba
- * @export
- */
-export type AccountCredentialsAlibaba = AccountCredentialsAlibabaOneOf | AccountCredentialsAlibabaV2 | AccountCredentialsWaba;
-
-/**
- * 
- * @export
- * @interface AccountCredentialsAlibabaOneOf
- */
-export interface AccountCredentialsAlibabaOneOf {
-    /**
-     * 
-     * @type {string}
-     * @memberof AccountCredentialsAlibabaOneOf
-     */
-    'type': AccountCredentialsAlibabaOneOfTypeEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof AccountCredentialsAlibabaOneOf
-     */
-    'accessKeyId': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AccountCredentialsAlibabaOneOf
-     */
-    'accessKeySecret': string;
-    /**
-     * Secret for WebHook
-     * @type {string}
-     * @memberof AccountCredentialsAlibabaOneOf
-     */
-    'secret': string;
-}
-
-export const AccountCredentialsAlibabaOneOfTypeEnum = {
-    AlibabaCams: 'alibaba-cams'
-} as const;
-
-export type AccountCredentialsAlibabaOneOfTypeEnum = typeof AccountCredentialsAlibabaOneOfTypeEnum[keyof typeof AccountCredentialsAlibabaOneOfTypeEnum];
-
-/**
- * 
- * @export
- * @interface AccountCredentialsAlibabaV2
- */
-export interface AccountCredentialsAlibabaV2 {
-    /**
-     * 
-     * @type {string}
-     * @memberof AccountCredentialsAlibabaV2
-     */
-    'type': AccountCredentialsAlibabaV2TypeEnum;
-    /**
-     * The initial access token used to authenticate with Alibaba CAMS service
-     * @type {string}
-     * @memberof AccountCredentialsAlibabaV2
-     */
-    'initialAccessToken'?: string;
-    /**
-     * The WABA ID of the business account. This is the same as the business account\'s JID
-     * @type {string}
-     * @memberof AccountCredentialsAlibabaV2
-     */
-    'wabaId'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AccountCredentialsAlibabaV2
-     */
-    'templateNamespace'?: string;
-    /**
-     * The customer space ID of the business account. Used internally
-     * @type {string}
-     * @memberof AccountCredentialsAlibabaV2
-     */
-    'custSpaceId'?: string;
-    /**
-     * Secret for WebHook
-     * @type {string}
-     * @memberof AccountCredentialsAlibabaV2
-     */
-    'secret': string;
-}
-
-export const AccountCredentialsAlibabaV2TypeEnum = {
-    AlibabaCamsV2: 'alibaba-cams-v2'
-} as const;
-
-export type AccountCredentialsAlibabaV2TypeEnum = typeof AccountCredentialsAlibabaV2TypeEnum[keyof typeof AccountCredentialsAlibabaV2TypeEnum];
-
-/**
  * 
  * @export
  * @interface AccountCredentialsMail
@@ -357,32 +263,6 @@ export const AccountCredentialsSmsTypeEnum = {
 } as const;
 
 export type AccountCredentialsSmsTypeEnum = typeof AccountCredentialsSmsTypeEnum[keyof typeof AccountCredentialsSmsTypeEnum];
-
-/**
- * 
- * @export
- * @interface AccountCredentialsTikTok
- */
-export interface AccountCredentialsTikTok {
-    /**
-     * 
-     * @type {string}
-     * @memberof AccountCredentialsTikTok
-     */
-    'type': AccountCredentialsTikTokTypeEnum;
-    /**
-     * Cookies for TikTok. This must be a serialised `tough-cookie` cookiejar
-     * @type {{ [key: string]: any; }}
-     * @memberof AccountCredentialsTikTok
-     */
-    'cookies': { [key: string]: any; };
-}
-
-export const AccountCredentialsTikTokTypeEnum = {
-    Tiktok: 'tiktok'
-} as const;
-
-export type AccountCredentialsTikTokTypeEnum = typeof AccountCredentialsTikTokTypeEnum[keyof typeof AccountCredentialsTikTokTypeEnum];
 
 /**
  * 
@@ -566,7 +446,6 @@ export const AccountType = {
     Wa: 'wa',
     WaBusinessApi: 'wa-business-api',
     Mock: 'mock',
-    Tiktok: 'tiktok',
     Messenger: 'messenger',
     Mail: 'mail',
     Sms: 'sms',
@@ -703,7 +582,7 @@ export interface AccountsPatchRequest {
  * @type AccountsPatchRequestCredentials
  * @export
  */
-export type AccountsPatchRequestCredentials = AccountCredentialsAlibaba | AccountCredentialsAlibabaV2 | AccountCredentialsMail | AccountCredentialsMeta | AccountCredentialsSms | AccountCredentialsTikTok;
+export type AccountsPatchRequestCredentials = AccountCredentialsMail | AccountCredentialsMeta | AccountCredentialsSms | AccountCredentialsWaba;
 
 /**
  * 
@@ -1162,25 +1041,6 @@ export type AlibabaCAMSWebhookTemplateItemAuditStatusEnum = typeof AlibabaCAMSWe
 /**
  * 
  * @export
- * @interface AlibabaCamsMetadata200Response
- */
-export interface AlibabaCamsMetadata200Response {
-    /**
-     * Meta app ID for embedded sign up
-     * @type {string}
-     * @memberof AlibabaCamsMetadata200Response
-     */
-    'appId': string;
-    /**
-     * Meta terms pdf template for embedded sign up
-     * @type {string}
-     * @memberof AlibabaCamsMetadata200Response
-     */
-    'isvTermsTemplate': string;
-}
-/**
- * 
- * @export
  * @interface AlibabaCamsProfileUpdateRequest
  */
 export interface AlibabaCamsProfileUpdateRequest {
@@ -1256,38 +1116,6 @@ export const AlibabaCamsRegisterRequestVersionEnum = {
 
 export type AlibabaCamsRegisterRequestVersionEnum = typeof AlibabaCamsRegisterRequestVersionEnum[keyof typeof AlibabaCamsRegisterRequestVersionEnum];
 
-/**
- * 
- * @export
- * @interface AlibabaCamsSync200Response
- */
-export interface AlibabaCamsSync200Response {
-    /**
-     * 
-     * @type {Account}
-     * @memberof AlibabaCamsSync200Response
-     */
-    'account': Account;
-}
-/**
- * Override with new cust space ID & phone number
- * @export
- * @interface AlibabaCamsSyncRequest
- */
-export interface AlibabaCamsSyncRequest {
-    /**
-     * WABA customer space ID
-     * @type {string}
-     * @memberof AlibabaCamsSyncRequest
-     */
-    'custSpaceId'?: string;
-    /**
-     * Phone number to connect to the account. No formatting, just digits with country code.
-     * @type {string}
-     * @memberof AlibabaCamsSyncRequest
-     */
-    'phoneNumber'?: string;
-}
 /**
  * @type AnyContactID
  * @export
@@ -6139,68 +5967,6 @@ export type TicketTimerStatus = typeof TicketTimerStatus[keyof typeof TicketTime
 /**
  * 
  * @export
- * @interface TikTokChatState
- */
-export interface TikTokChatState {
-    /**
-     * Whether the chat is synced. If false, the chat will not be available
-     * @type {number}
-     * @memberof TikTokChatState
-     */
-    'synced': number;
-    /**
-     * Cursor to sync from. If null, the chat will be synced from the beginning
-     * @type {string}
-     * @memberof TikTokChatState
-     */
-    'cursor'?: string;
-}
-/**
- * 
- * @export
- * @interface TikTokStateInfo
- */
-export interface TikTokStateInfo {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof TikTokStateInfo
-     */
-    'isSyncing'?: boolean;
-    /**
-     * 
-     * @type {TikTokChatState}
-     * @memberof TikTokStateInfo
-     */
-    'strangerChats'?: TikTokChatState;
-    /**
-     * 
-     * @type {TikTokChatState}
-     * @memberof TikTokStateInfo
-     */
-    'normalChats'?: TikTokChatState;
-    /**
-     * 
-     * @type {string}
-     * @memberof TikTokStateInfo
-     */
-    'lastSyncCursor'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TikTokStateInfo
-     */
-    'latestNotificationCursor'?: string;
-    /**
-     * An ISO formatted timestamp
-     * @type {string}
-     * @memberof TikTokStateInfo
-     */
-    'syncCompletedAt'?: string;
-}
-/**
- * 
- * @export
  * @interface UniqueContactID
  */
 export interface UniqueContactID {
@@ -7353,82 +7119,6 @@ export const AlibabaCamsApiAxiosParamCreator = function (configuration?: Configu
     return {
         /**
          * 
-         * @summary Submit ISV terms to Alibaba CAMS API
-         * @param {string} accountId 
-         * @param {AlibabaCAMSISVTerms} [alibabaCAMSISVTerms] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        alibabaCamsIsvTerms: async (accountId: string, alibabaCAMSISVTerms?: AlibabaCAMSISVTerms, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'accountId' is not null or undefined
-            assertParamExists('alibabaCamsIsvTerms', 'accountId', accountId)
-            const localVarPath = `/alibaba-cams/isv-terms/{accountId}`
-                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication token required
-            // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(alibabaCAMSISVTerms, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Query metadata for Alibaba CAMS API
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        alibabaCamsMetadata: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/alibaba-cams/metadata`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication token required
-            // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary Update business info for Alibaba CAMS API
          * @param {string} accountId 
          * @param {AlibabaCamsProfileUpdateRequest} [alibabaCamsProfileUpdateRequest] 
@@ -7513,48 +7203,6 @@ export const AlibabaCamsApiAxiosParamCreator = function (configuration?: Configu
         },
         /**
          * 
-         * @summary Sync the account state with Alibaba CAMS
-         * @param {string} accountId 
-         * @param {AlibabaCamsSyncRequest} [alibabaCamsSyncRequest] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        alibabaCamsSync: async (accountId: string, alibabaCamsSyncRequest?: AlibabaCamsSyncRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'accountId' is not null or undefined
-            assertParamExists('alibabaCamsSync', 'accountId', accountId)
-            const localVarPath = `/alibaba-cams/sync/{accountId}`
-                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication token required
-            // oauth required
-            await setOAuthToObject(localVarHeaderParameter, "token", ["ACCOUNT_PATCH"], configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(alibabaCamsSyncRequest, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary Receive a message from Alibaba CAMS API
          * @param {string} accountId 
          * @param {string} secret 
@@ -7607,32 +7255,6 @@ export const AlibabaCamsApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
-         * @summary Submit ISV terms to Alibaba CAMS API
-         * @param {string} accountId 
-         * @param {AlibabaCAMSISVTerms} [alibabaCAMSISVTerms] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async alibabaCamsIsvTerms(accountId: string, alibabaCAMSISVTerms?: AlibabaCAMSISVTerms, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.alibabaCamsIsvTerms(accountId, alibabaCAMSISVTerms, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AlibabaCamsApi.alibabaCamsIsvTerms']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Query metadata for Alibaba CAMS API
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async alibabaCamsMetadata(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AlibabaCamsMetadata200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.alibabaCamsMetadata(options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AlibabaCamsApi.alibabaCamsMetadata']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
          * @summary Update business info for Alibaba CAMS API
          * @param {string} accountId 
          * @param {AlibabaCamsProfileUpdateRequest} [alibabaCamsProfileUpdateRequest] 
@@ -7657,20 +7279,6 @@ export const AlibabaCamsApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.alibabaCamsRegister(accountId, alibabaCamsRegisterRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AlibabaCamsApi.alibabaCamsRegister']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Sync the account state with Alibaba CAMS
-         * @param {string} accountId 
-         * @param {AlibabaCamsSyncRequest} [alibabaCamsSyncRequest] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async alibabaCamsSync(accountId: string, alibabaCamsSyncRequest?: AlibabaCamsSyncRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AlibabaCamsSync200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.alibabaCamsSync(accountId, alibabaCamsSyncRequest, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AlibabaCamsApi.alibabaCamsSync']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -7700,25 +7308,6 @@ export const AlibabaCamsApiFactory = function (configuration?: Configuration, ba
     return {
         /**
          * 
-         * @summary Submit ISV terms to Alibaba CAMS API
-         * @param {AlibabaCamsApiAlibabaCamsIsvTermsRequest} requestParameters Request parameters.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        alibabaCamsIsvTerms(requestParameters: AlibabaCamsApiAlibabaCamsIsvTermsRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
-            return localVarFp.alibabaCamsIsvTerms(requestParameters.accountId, requestParameters.alibabaCAMSISVTerms, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Query metadata for Alibaba CAMS API
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        alibabaCamsMetadata(options?: RawAxiosRequestConfig): AxiosPromise<AlibabaCamsMetadata200Response> {
-            return localVarFp.alibabaCamsMetadata(options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Update business info for Alibaba CAMS API
          * @param {AlibabaCamsApiAlibabaCamsProfileUpdateRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -7739,16 +7328,6 @@ export const AlibabaCamsApiFactory = function (configuration?: Configuration, ba
         },
         /**
          * 
-         * @summary Sync the account state with Alibaba CAMS
-         * @param {AlibabaCamsApiAlibabaCamsSyncRequest} requestParameters Request parameters.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        alibabaCamsSync(requestParameters: AlibabaCamsApiAlibabaCamsSyncRequest, options?: RawAxiosRequestConfig): AxiosPromise<AlibabaCamsSync200Response> {
-            return localVarFp.alibabaCamsSync(requestParameters.accountId, requestParameters.alibabaCamsSyncRequest, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Receive a message from Alibaba CAMS API
          * @param {AlibabaCamsApiWebhookAlibabaCamsPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -7759,27 +7338,6 @@ export const AlibabaCamsApiFactory = function (configuration?: Configuration, ba
         },
     };
 };
-
-/**
- * Request parameters for alibabaCamsIsvTerms operation in AlibabaCamsApi.
- * @export
- * @interface AlibabaCamsApiAlibabaCamsIsvTermsRequest
- */
-export interface AlibabaCamsApiAlibabaCamsIsvTermsRequest {
-    /**
-     * 
-     * @type {string}
-     * @memberof AlibabaCamsApiAlibabaCamsIsvTerms
-     */
-    readonly accountId: string
-
-    /**
-     * 
-     * @type {AlibabaCAMSISVTerms}
-     * @memberof AlibabaCamsApiAlibabaCamsIsvTerms
-     */
-    readonly alibabaCAMSISVTerms?: AlibabaCAMSISVTerms
-}
 
 /**
  * Request parameters for alibabaCamsProfileUpdate operation in AlibabaCamsApi.
@@ -7824,27 +7382,6 @@ export interface AlibabaCamsApiAlibabaCamsRegisterRequest {
 }
 
 /**
- * Request parameters for alibabaCamsSync operation in AlibabaCamsApi.
- * @export
- * @interface AlibabaCamsApiAlibabaCamsSyncRequest
- */
-export interface AlibabaCamsApiAlibabaCamsSyncRequest {
-    /**
-     * 
-     * @type {string}
-     * @memberof AlibabaCamsApiAlibabaCamsSync
-     */
-    readonly accountId: string
-
-    /**
-     * 
-     * @type {AlibabaCamsSyncRequest}
-     * @memberof AlibabaCamsApiAlibabaCamsSync
-     */
-    readonly alibabaCamsSyncRequest?: AlibabaCamsSyncRequest
-}
-
-/**
  * Request parameters for webhookAlibabaCamsPost operation in AlibabaCamsApi.
  * @export
  * @interface AlibabaCamsApiWebhookAlibabaCamsPostRequest
@@ -7881,29 +7418,6 @@ export interface AlibabaCamsApiWebhookAlibabaCamsPostRequest {
 export class AlibabaCamsApi extends BaseAPI {
     /**
      * 
-     * @summary Submit ISV terms to Alibaba CAMS API
-     * @param {AlibabaCamsApiAlibabaCamsIsvTermsRequest} requestParameters Request parameters.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof AlibabaCamsApi
-     */
-    public alibabaCamsIsvTerms(requestParameters: AlibabaCamsApiAlibabaCamsIsvTermsRequest, options?: RawAxiosRequestConfig) {
-        return AlibabaCamsApiFp(this.configuration).alibabaCamsIsvTerms(requestParameters.accountId, requestParameters.alibabaCAMSISVTerms, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Query metadata for Alibaba CAMS API
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof AlibabaCamsApi
-     */
-    public alibabaCamsMetadata(options?: RawAxiosRequestConfig) {
-        return AlibabaCamsApiFp(this.configuration).alibabaCamsMetadata(options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @summary Update business info for Alibaba CAMS API
      * @param {AlibabaCamsApiAlibabaCamsProfileUpdateRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -7924,18 +7438,6 @@ export class AlibabaCamsApi extends BaseAPI {
      */
     public alibabaCamsRegister(requestParameters: AlibabaCamsApiAlibabaCamsRegisterRequest, options?: RawAxiosRequestConfig) {
         return AlibabaCamsApiFp(this.configuration).alibabaCamsRegister(requestParameters.accountId, requestParameters.alibabaCamsRegisterRequest, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Sync the account state with Alibaba CAMS
-     * @param {AlibabaCamsApiAlibabaCamsSyncRequest} requestParameters Request parameters.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof AlibabaCamsApi
-     */
-    public alibabaCamsSync(requestParameters: AlibabaCamsApiAlibabaCamsSyncRequest, options?: RawAxiosRequestConfig) {
-        return AlibabaCamsApiFp(this.configuration).alibabaCamsSync(requestParameters.accountId, requestParameters.alibabaCamsSyncRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -10571,7 +10073,7 @@ export const ContactsApiFactory = function (configuration?: Configuration, baseP
 export interface ContactsApiContactsCheckExistsRequest {
     /**
      * which account type to check from
-     * @type {'whatsapp' | 'tiktok'}
+     * @type {'whatsapp'}
      * @memberof ContactsApiContactsCheckExists
      */
     readonly type: ContactsCheckExistsTypeEnum
@@ -11158,8 +10660,7 @@ export class ContactsApi extends BaseAPI {
  * @export
  */
 export const ContactsCheckExistsTypeEnum = {
-    Whatsapp: 'whatsapp',
-    Tiktok: 'tiktok'
+    Whatsapp: 'whatsapp'
 } as const;
 export type ContactsCheckExistsTypeEnum = typeof ContactsCheckExistsTypeEnum[keyof typeof ContactsCheckExistsTypeEnum];
 /**
