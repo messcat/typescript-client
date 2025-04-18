@@ -3368,10 +3368,10 @@ export interface Message {
     'status'?: MessageStatus;
     /**
      * 
-     * @type {MessageAllOfError}
+     * @type {MessageError}
      * @memberof Message
      */
-    'error'?: MessageAllOfError;
+    'error'?: MessageError | null;
     /**
      * Only for notes, user ID of the person who resolved the note
      * @type {string}
@@ -3434,12 +3434,6 @@ export interface Message {
     'referencedPost'?: ReferencedPost;
 }
 
-
-/**
- * @type MessageAllOfError
- * @export
- */
-export type MessageAllOfError = MessageError | object;
 
 /**
  * Message describes a reaction to another message

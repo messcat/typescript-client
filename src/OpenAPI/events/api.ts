@@ -8429,7 +8429,7 @@ export interface MessageInsertData {
      * @type {MessageInsertDataError}
      * @memberof MessageInsertData
      */
-    'error'?: MessageInsertDataError;
+    'error'?: MessageInsertDataError | null;
     /**
      * 
      * @type {string}
@@ -8801,39 +8801,33 @@ export interface MessageInsertDataConversationMetadata {
     'type': string;
 }
 /**
- * @type MessageInsertDataError
- * @export
- */
-export type MessageInsertDataError = MessageInsertDataErrorOneOf | object;
-
-/**
  * 
  * @export
- * @interface MessageInsertDataErrorOneOf
+ * @interface MessageInsertDataError
  */
-export interface MessageInsertDataErrorOneOf {
+export interface MessageInsertDataError {
     /**
      * 
      * @type {number}
-     * @memberof MessageInsertDataErrorOneOf
+     * @memberof MessageInsertDataError
      */
     'statusCode': number;
     /**
      * 
      * @type {string}
-     * @memberof MessageInsertDataErrorOneOf
+     * @memberof MessageInsertDataError
      */
     'message': string;
     /**
      * 
      * @type {AccountInsertDataErrorAllOfData}
-     * @memberof MessageInsertDataErrorOneOf
+     * @memberof MessageInsertDataError
      */
     'data'?: AccountInsertDataErrorAllOfData;
     /**
      * Number of retries that have been attempted
      * @type {number}
-     * @memberof MessageInsertDataErrorOneOf
+     * @memberof MessageInsertDataError
      */
     'retries': number;
 }
@@ -9504,7 +9498,7 @@ export interface MessageUpdateData {
      * @type {MessageInsertDataError}
      * @memberof MessageUpdateData
      */
-    'error'?: MessageInsertDataError;
+    'error'?: MessageInsertDataError | null;
     /**
      * 
      * @type {string}
