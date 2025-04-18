@@ -5504,32 +5504,6 @@ export interface ChatUpdateData {
 /**
  * 
  * @export
- * @interface ChatbotInsert
- */
-export interface ChatbotInsert {
-    /**
-     * 
-     * @type {string}
-     * @memberof ChatbotInsert
-     */
-    'event': ChatbotInsertEventEnum;
-    /**
-     * 
-     * @type {Array<ChatbotInsertData>}
-     * @memberof ChatbotInsert
-     */
-    'data': Array<ChatbotInsertData>;
-}
-
-export const ChatbotInsertEventEnum = {
-    ChatbotInsert: 'chatbot-insert'
-} as const;
-
-export type ChatbotInsertEventEnum = typeof ChatbotInsertEventEnum[keyof typeof ChatbotInsertEventEnum];
-
-/**
- * 
- * @export
  * @interface ChatbotInsertData
  */
 export interface ChatbotInsertData {
@@ -7338,7 +7312,6 @@ export const EventName = {
     CampaignInsert: 'campaign-insert',
     CredittransactionrecordInsert: 'credittransactionrecord-insert',
     KeywordbasedactionInsert: 'keywordbasedaction-insert',
-    ChatbotInsert: 'chatbot-insert',
     PaymentintegrationInsert: 'paymentintegration-insert',
     ShopproductInsert: 'shopproduct-insert',
     TeammemberLogout: 'teammember-logout',
@@ -7481,7 +7454,7 @@ export type EventSubscriptionType = typeof EventSubscriptionType[keyof typeof Ev
  * The request body you\'ll receive in a webhook
  * @export
  */
-export type EventWebhookData = AccountDelete | AccountInsert | AccountUpdate | ActionExecute | ActionSchedule | AiCreditUse | BotDelete | BotInsert | BotUpdate | CallDelete | CallInsert | CallUpdate | CallchannelDelete | CallchannelInsert | CallchannelUpdate | CampaignInsert | ChatDelete | ChatInsert | ChatUpdate | ChatbotInsert | ContactDelete | ContactInsert | ContactUpdate | CredittransactionrecordInsert | CrmTicketDelete | CrmTicketInsert | CrmTicketUpdate | CustomerCreditsLevelUpdate | DashboardDelete | DashboardInsert | DashboardUpdate | FewMessagesLeft | GroupUpdate | KeywordbasedactionInsert | MessageDelete | MessageInsert | MessageUpdate | OrderInsert | PaymentintegrationInsert | PlatformproductDelete | PlatformproductInsert | PlatformproductUpdate | PresenceUpdate | PushNotification | ShopproductInsert | StaleAccountNotification | TagDelete | TagInsert | TagUpdate | TeamDelete | TeamInsert | TeamUpdate | TeammemberDelete | TeammemberInsert | TeammemberLogout | TeammemberUpdate | TrackingDelete | TrackingInsert | TrackingUpdate | UserDelete | UserInsert | UserUpdate;
+export type EventWebhookData = AccountDelete | AccountInsert | AccountUpdate | ActionExecute | ActionSchedule | AiCreditUse | BotDelete | BotInsert | BotUpdate | CallDelete | CallInsert | CallUpdate | CallchannelDelete | CallchannelInsert | CallchannelUpdate | CampaignInsert | ChatDelete | ChatInsert | ChatUpdate | ContactDelete | ContactInsert | ContactUpdate | CredittransactionrecordInsert | CrmTicketDelete | CrmTicketInsert | CrmTicketUpdate | CustomerCreditsLevelUpdate | DashboardDelete | DashboardInsert | DashboardUpdate | FewMessagesLeft | GroupUpdate | KeywordbasedactionInsert | MessageDelete | MessageInsert | MessageUpdate | OrderInsert | PaymentintegrationInsert | PlatformproductDelete | PlatformproductInsert | PlatformproductUpdate | PresenceUpdate | PushNotification | ShopproductInsert | StaleAccountNotification | TagDelete | TagInsert | TagUpdate | TeamDelete | TeamInsert | TeamUpdate | TeammemberDelete | TeammemberInsert | TeammemberLogout | TeammemberUpdate | TrackingDelete | TrackingInsert | TrackingUpdate | UserDelete | UserInsert | UserUpdate;
 
 /**
  * 
