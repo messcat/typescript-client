@@ -3,12 +3,7 @@ import { createHash } from 'crypto'
 import { ActorMetadata, Configuration, ConfigurationParameters, JWT, OAuthApi, RefreshTokenLoginRequest, Scope } from '../OpenAPI'
 import SCOPES from '../scopes.json'
 
-const PUBLIC_KEY = `
------BEGIN PUBLIC KEY-----
-MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEevVHEB81+mIuHJ6Ka2+GveuyAb2P
-SNEGnm4K1V6HzZF0F9+mQS7N0UHNE+gv0OQIKi5D6e48ZCVytj3iX4Todg==
------END PUBLIC KEY-----
-`
+const PUBLIC_KEY = '\n-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAESdu2255B6X+gZtAZviXGv2ed2byMTbvkXZlzWthB4ayxmqfkQIFyPtvrRJLWEcsvZH0He8KQ7BBeNKFY/JgKdQ==\n-----END PUBLIC KEY-----\n'
 
 let customPublicKey: string | undefined
 
