@@ -745,85 +745,6 @@ export interface AlibabaCAMSISVTerms {
     'isvTerms': string;
 }
 /**
- * 
- * @export
- * @interface AlibabaCAMSStateInfo
- */
-export interface AlibabaCAMSStateInfo {
-    /**
-     * 
-     * @type {string}
-     * @memberof AlibabaCAMSStateInfo
-     */
-    'version'?: AlibabaCAMSStateInfoVersionEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof AlibabaCAMSStateInfo
-     */
-    'status'?: AlibabaCAMSStateInfoStatusEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof AlibabaCAMSStateInfo
-     */
-    'qualityRating'?: AlibabaCAMSStateInfoQualityRatingEnum;
-    /**
-     * Status of the company name approval from WABA
-     * @type {string}
-     * @memberof AlibabaCAMSStateInfo
-     */
-    'nameStatus'?: string;
-    /**
-     * Whether the business account is blocked from using Alibaba CAMS by WhatsApp
-     * @type {boolean}
-     * @memberof AlibabaCAMSStateInfo
-     */
-    'isBlocked'?: boolean;
-    /**
-     * 
-     * @type {AlibabaCAMSISVTerms}
-     * @memberof AlibabaCAMSStateInfo
-     */
-    'isvTerms'?: AlibabaCAMSISVTerms;
-    /**
-     * Description of the business account visible to others on WA
-     * @type {string}
-     * @memberof AlibabaCAMSStateInfo
-     */
-    'profileDescription'?: string;
-    /**
-     * Whether the business account has enabled the welcome message feature
-     * @type {boolean}
-     * @memberof AlibabaCAMSStateInfo
-     */
-    'enabledWelcomeMessage'?: boolean;
-}
-
-export const AlibabaCAMSStateInfoVersionEnum = {
-    Waba: 'waba',
-    AlibabaCamsV2: 'alibaba-cams-v2'
-} as const;
-
-export type AlibabaCAMSStateInfoVersionEnum = typeof AlibabaCAMSStateInfoVersionEnum[keyof typeof AlibabaCAMSStateInfoVersionEnum];
-export const AlibabaCAMSStateInfoStatusEnum = {
-    PendingApproval: 'pending-approval',
-    Approved: 'approved',
-    Rejected: 'rejected'
-} as const;
-
-export type AlibabaCAMSStateInfoStatusEnum = typeof AlibabaCAMSStateInfoStatusEnum[keyof typeof AlibabaCAMSStateInfoStatusEnum];
-export const AlibabaCAMSStateInfoQualityRatingEnum = {
-    Red: 'RED',
-    Yellow: 'YELLOW',
-    Green: 'GREEN',
-    Na: 'NA',
-    Unknown: 'UNKNOWN'
-} as const;
-
-export type AlibabaCAMSStateInfoQualityRatingEnum = typeof AlibabaCAMSStateInfoQualityRatingEnum[keyof typeof AlibabaCAMSStateInfoQualityRatingEnum];
-
-/**
  * @type AlibabaCAMSWebhookItem
  * @export
  */
@@ -6163,6 +6084,90 @@ export interface WASyncStateInfo {
      */
     'messages'?: WASyncData;
 }
+/**
+ * 
+ * @export
+ * @interface WabaStateInfo
+ */
+export interface WabaStateInfo {
+    /**
+     * 
+     * @type {string}
+     * @memberof WabaStateInfo
+     */
+    'version'?: WabaStateInfoVersionEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof WabaStateInfo
+     */
+    'status'?: WabaStateInfoStatusEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof WabaStateInfo
+     */
+    'qualityRating'?: WabaStateInfoQualityRatingEnum;
+    /**
+     * Status of the company name approval from WABA
+     * @type {string}
+     * @memberof WabaStateInfo
+     */
+    'nameStatus'?: string;
+    /**
+     * Whether the business account is blocked from using Alibaba CAMS by WhatsApp
+     * @type {boolean}
+     * @memberof WabaStateInfo
+     */
+    'isBlocked'?: boolean;
+    /**
+     * 
+     * @type {AlibabaCAMSISVTerms}
+     * @memberof WabaStateInfo
+     */
+    'isvTerms'?: AlibabaCAMSISVTerms;
+    /**
+     * Description of the business account visible to others on WA
+     * @type {string}
+     * @memberof WabaStateInfo
+     */
+    'profileDescription'?: string;
+    /**
+     * Whether the business account has enabled the welcome message feature
+     * @type {boolean}
+     * @memberof WabaStateInfo
+     */
+    'enabledWelcomeMessage'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof WabaStateInfo
+     */
+    'waBusinessId'?: string;
+}
+
+export const WabaStateInfoVersionEnum = {
+    Waba: 'waba'
+} as const;
+
+export type WabaStateInfoVersionEnum = typeof WabaStateInfoVersionEnum[keyof typeof WabaStateInfoVersionEnum];
+export const WabaStateInfoStatusEnum = {
+    PendingApproval: 'pending-approval',
+    Approved: 'approved',
+    Rejected: 'rejected'
+} as const;
+
+export type WabaStateInfoStatusEnum = typeof WabaStateInfoStatusEnum[keyof typeof WabaStateInfoStatusEnum];
+export const WabaStateInfoQualityRatingEnum = {
+    Red: 'RED',
+    Yellow: 'YELLOW',
+    Green: 'GREEN',
+    Na: 'NA',
+    Unknown: 'UNKNOWN'
+} as const;
+
+export type WabaStateInfoQualityRatingEnum = typeof WabaStateInfoQualityRatingEnum[keyof typeof WabaStateInfoQualityRatingEnum];
+
 /**
  * 
  * @export
