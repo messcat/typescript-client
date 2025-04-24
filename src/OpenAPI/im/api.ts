@@ -1036,8 +1036,7 @@ export interface AlibabaCamsRegisterRequest {
 }
 
 export const AlibabaCamsRegisterRequestVersionEnum = {
-    Waba: 'waba',
-    AlibabaCamsV2: 'alibaba-cams-v2'
+    Waba: 'waba'
 } as const;
 
 export type AlibabaCamsRegisterRequestVersionEnum = typeof AlibabaCamsRegisterRequestVersionEnum[keyof typeof AlibabaCamsRegisterRequestVersionEnum];
