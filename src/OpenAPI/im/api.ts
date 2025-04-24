@@ -288,6 +288,12 @@ export interface AccountCredentialsWaba {
      * @memberof AccountCredentialsWaba
      */
     'waBusinessId': string;
+    /**
+     * Access token for the WABA
+     * @type {string}
+     * @memberof AccountCredentialsWaba
+     */
+    'accessToken'?: string;
 }
 
 export const AccountCredentialsWabaTypeEnum = {
@@ -1104,9 +1110,8 @@ export interface AlibabaCamsRegisterRequest {
      * Token from embedded sign up
      * @type {string}
      * @memberof AlibabaCamsRegisterRequest
-     * @deprecated
      */
-    'token'?: string;
+    'accessToken'?: string;
 }
 
 export const AlibabaCamsRegisterRequestVersionEnum = {
