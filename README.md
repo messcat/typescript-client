@@ -5,7 +5,7 @@ You can use this client to authenticate, send & receive messages, update chats, 
 
 ## API Docs
 
-You can find the full API docs for the service [here](https://messcat.stoplight.io/docs/openapi/YXBpOjMwMzA3ODYy-instant-messaging-service)
+You can find the full API docs for the service [here](https://messcat-ai.stoplight.io/docs/openapi/7492869297330-getting-started-with-api)
 
 ## Installing the Client
 
