@@ -2137,6 +2137,19 @@ export interface ContactsPostContactsInner {
 /**
  * 
  * @export
+ * @interface CreateTickets200Response
+ */
+export interface CreateTickets200Response {
+    /**
+     * 
+     * @type {Array<CrmTicket>}
+     * @memberof CreateTickets200Response
+     */
+    'items': Array<CrmTicket>;
+}
+/**
+ * 
+ * @export
  * @interface CrmBoard
  */
 export interface CrmBoard {
@@ -2501,6 +2514,25 @@ export interface CrmTicket {
 /**
  * 
  * @export
+ * @interface CrmTicketBulkPost
+ */
+export interface CrmTicketBulkPost {
+    /**
+     * ID of a CRM board
+     * @type {string}
+     * @memberof CrmTicketBulkPost
+     */
+    'boardId': string;
+    /**
+     * 
+     * @type {Array<CrmTicketPostItem>}
+     * @memberof CrmTicketBulkPost
+     */
+    'items': Array<CrmTicketPostItem>;
+}
+/**
+ * 
+ * @export
  * @interface CrmTicketPatch
  */
 export interface CrmTicketPatch {
@@ -2575,6 +2607,49 @@ export interface CrmTicketPost {
      * 
      * @type {TicketTimerCreate}
      * @memberof CrmTicketPost
+     */
+    'timer'?: TicketTimerCreate;
+}
+/**
+ * 
+ * @export
+ * @interface CrmTicketPostItem
+ */
+export interface CrmTicketPostItem {
+    /**
+     * ID of a stage
+     * @type {string}
+     * @memberof CrmTicketPostItem
+     */
+    'stageId'?: string;
+    /**
+     * Title of the ticket
+     * @type {string}
+     * @memberof CrmTicketPostItem
+     */
+    'title': string;
+    /**
+     * 
+     * @type {UniqueContactID}
+     * @memberof CrmTicketPostItem
+     */
+    'contactId': UniqueContactID;
+    /**
+     * Order of a ticket
+     * @type {number}
+     * @memberof CrmTicketPostItem
+     */
+    'order'?: number;
+    /**
+     * An ISO formatted timestamp
+     * @type {string}
+     * @memberof CrmTicketPostItem
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {TicketTimerCreate}
+     * @memberof CrmTicketPostItem
      */
     'timer'?: TicketTimerCreate;
 }
@@ -7473,11 +7548,11 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
         /**
          * 
          * @summary Create a new CRM ticket
-         * @param {CrmTicketPost} [crmTicketPost] 
+         * @param {CrmTicketBulkPost} [crmTicketBulkPost] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createTicket: async (crmTicketPost?: CrmTicketPost, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createTickets: async (crmTicketBulkPost?: CrmTicketBulkPost, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/crm/tickets`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -7501,7 +7576,7 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(crmTicketPost, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(crmTicketBulkPost, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -7662,16 +7737,15 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
         },
         /**
          * 
-         * @summary Delete a CRM ticket
-         * @param {string} id 
+         * @summary Delete multiple CRM tickets
+         * @param {Array<string>} id Ticket IDs to delete
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteTicket: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteTickets: async (id: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('deleteTicket', 'id', id)
-            const localVarPath = `/crm/tickets/{id}`
-                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            assertParamExists('deleteTickets', 'id', id)
+            const localVarPath = `/crm/tickets`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -7686,6 +7760,10 @@ export const CRMApiAxiosParamCreator = function (configuration?: Configuration) 
             // authentication token required
             // oauth required
             await setOAuthToObject(localVarHeaderParameter, "token", [], configuration)
+
+            if (id) {
+                localVarQueryParameter['id'] = id;
+            }
 
 
     
@@ -7996,14 +8074,14 @@ export const CRMApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Create a new CRM ticket
-         * @param {CrmTicketPost} [crmTicketPost] 
+         * @param {CrmTicketBulkPost} [crmTicketBulkPost] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createTicket(crmTicketPost?: CrmTicketPost, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CrmTicket>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createTicket(crmTicketPost, options);
+        async createTickets(crmTicketBulkPost?: CrmTicketBulkPost, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateTickets200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createTickets(crmTicketBulkPost, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['CRMApi.createTicket']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['CRMApi.createTickets']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -8060,15 +8138,15 @@ export const CRMApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Delete a CRM ticket
-         * @param {string} id 
+         * @summary Delete multiple CRM tickets
+         * @param {Array<string>} id Ticket IDs to delete
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteTicket(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountsDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTicket(id, options);
+        async deleteTickets(id: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountsDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTickets(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['CRMApi.deleteTicket']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['CRMApi.deleteTickets']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -8168,12 +8246,12 @@ export const CRMApiFactory = function (configuration?: Configuration, basePath?:
         /**
          * 
          * @summary Create a new CRM ticket
-         * @param {CRMApiCreateTicketRequest} requestParameters Request parameters.
+         * @param {CRMApiCreateTicketsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createTicket(requestParameters: CRMApiCreateTicketRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<CrmTicket> {
-            return localVarFp.createTicket(requestParameters.crmTicketPost, options).then((request) => request(axios, basePath));
+        createTickets(requestParameters: CRMApiCreateTicketsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<CreateTickets200Response> {
+            return localVarFp.createTickets(requestParameters.crmTicketBulkPost, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -8216,13 +8294,13 @@ export const CRMApiFactory = function (configuration?: Configuration, basePath?:
         },
         /**
          * 
-         * @summary Delete a CRM ticket
-         * @param {CRMApiDeleteTicketRequest} requestParameters Request parameters.
+         * @summary Delete multiple CRM tickets
+         * @param {CRMApiDeleteTicketsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteTicket(requestParameters: CRMApiDeleteTicketRequest, options?: RawAxiosRequestConfig): AxiosPromise<AccountsDelete200Response> {
-            return localVarFp.deleteTicket(requestParameters.id, options).then((request) => request(axios, basePath));
+        deleteTickets(requestParameters: CRMApiDeleteTicketsRequest, options?: RawAxiosRequestConfig): AxiosPromise<AccountsDelete200Response> {
+            return localVarFp.deleteTickets(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -8278,17 +8356,17 @@ export const CRMApiFactory = function (configuration?: Configuration, basePath?:
 };
 
 /**
- * Request parameters for createTicket operation in CRMApi.
+ * Request parameters for createTickets operation in CRMApi.
  * @export
- * @interface CRMApiCreateTicketRequest
+ * @interface CRMApiCreateTicketsRequest
  */
-export interface CRMApiCreateTicketRequest {
+export interface CRMApiCreateTicketsRequest {
     /**
      * 
-     * @type {CrmTicketPost}
-     * @memberof CRMApiCreateTicket
+     * @type {CrmTicketBulkPost}
+     * @memberof CRMApiCreateTickets
      */
-    readonly crmTicketPost?: CrmTicketPost
+    readonly crmTicketBulkPost?: CrmTicketBulkPost
 }
 
 /**
@@ -8341,17 +8419,17 @@ export interface CRMApiCrmBoardPostRequest {
 }
 
 /**
- * Request parameters for deleteTicket operation in CRMApi.
+ * Request parameters for deleteTickets operation in CRMApi.
  * @export
- * @interface CRMApiDeleteTicketRequest
+ * @interface CRMApiDeleteTicketsRequest
  */
-export interface CRMApiDeleteTicketRequest {
+export interface CRMApiDeleteTicketsRequest {
     /**
-     * 
-     * @type {string}
-     * @memberof CRMApiDeleteTicket
+     * Ticket IDs to delete
+     * @type {Array<string>}
+     * @memberof CRMApiDeleteTickets
      */
-    readonly id: string
+    readonly id: Array<string>
 }
 
 /**
@@ -8567,13 +8645,13 @@ export class CRMApi extends BaseAPI {
     /**
      * 
      * @summary Create a new CRM ticket
-     * @param {CRMApiCreateTicketRequest} requestParameters Request parameters.
+     * @param {CRMApiCreateTicketsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CRMApi
      */
-    public createTicket(requestParameters: CRMApiCreateTicketRequest = {}, options?: RawAxiosRequestConfig) {
-        return CRMApiFp(this.configuration).createTicket(requestParameters.crmTicketPost, options).then((request) => request(this.axios, this.basePath));
+    public createTickets(requestParameters: CRMApiCreateTicketsRequest = {}, options?: RawAxiosRequestConfig) {
+        return CRMApiFp(this.configuration).createTickets(requestParameters.crmTicketBulkPost, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -8625,14 +8703,14 @@ export class CRMApi extends BaseAPI {
 
     /**
      * 
-     * @summary Delete a CRM ticket
-     * @param {CRMApiDeleteTicketRequest} requestParameters Request parameters.
+     * @summary Delete multiple CRM tickets
+     * @param {CRMApiDeleteTicketsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CRMApi
      */
-    public deleteTicket(requestParameters: CRMApiDeleteTicketRequest, options?: RawAxiosRequestConfig) {
-        return CRMApiFp(this.configuration).deleteTicket(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
+    public deleteTickets(requestParameters: CRMApiDeleteTicketsRequest, options?: RawAxiosRequestConfig) {
+        return CRMApiFp(this.configuration).deleteTickets(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
