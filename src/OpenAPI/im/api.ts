@@ -1515,6 +1515,25 @@ export type ChatsGetAssigneeParameter = Array<ChatsGetAssigneeParameterOneOf> | 
 export type ChatsGetAssigneeParameterOneOf = AssigneeFilter | string;
 
 /**
+ * 
+ * @export
+ * @interface ChatsGetByAccount200Response
+ */
+export interface ChatsGetByAccount200Response {
+    /**
+     * 
+     * @type {Array<Chat>}
+     * @memberof ChatsGetByAccount200Response
+     */
+    'items': Array<Chat>;
+    /**
+     * next page cursor, if it exists
+     * @type {string}
+     * @memberof ChatsGetByAccount200Response
+     */
+    'nextPageCursor'?: string;
+}
+/**
  * @type ChatsGetContactsParameter
  * @export
  */
@@ -8917,6 +8936,59 @@ export const ChatsApiAxiosParamCreator = function (configuration?: Configuration
             };
         },
         /**
+         * This route returns chats for a given account. The chats are not ordered by last message timestamp.
+         * @summary Get unordered chats by account
+         * @param {string} accountId 
+         * @param {boolean} [fetchContact] If true, the API will fetch the contact details for each chat.
+         * @param {number} [count] Number of items to return
+         * @param {string} [page] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        chatsGetByAccount: async (accountId: string, fetchContact?: boolean, count?: number, page?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'accountId' is not null or undefined
+            assertParamExists('chatsGetByAccount', 'accountId', accountId)
+            const localVarPath = `/chats/unordered/{accountId}`
+                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "token", ["CHATS_ACCESS_ALL"], configuration)
+
+            if (fetchContact !== undefined) {
+                localVarQueryParameter['fetchContact'] = fetchContact;
+            }
+
+            if (count !== undefined) {
+                localVarQueryParameter['count'] = count;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * 
          * @summary Update a chat -- read, unread, archive, pin etc.
          * @param {string} accountId 
@@ -9054,6 +9126,22 @@ export const ChatsApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * This route returns chats for a given account. The chats are not ordered by last message timestamp.
+         * @summary Get unordered chats by account
+         * @param {string} accountId 
+         * @param {boolean} [fetchContact] If true, the API will fetch the contact details for each chat.
+         * @param {number} [count] Number of items to return
+         * @param {string} [page] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async chatsGetByAccount(accountId: string, fetchContact?: boolean, count?: number, page?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ChatsGetByAccount200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.chatsGetByAccount(accountId, fetchContact, count, page, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ChatsApi.chatsGetByAccount']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * 
          * @summary Update a chat -- read, unread, archive, pin etc.
          * @param {string} accountId 
@@ -9102,6 +9190,16 @@ export const ChatsApiFactory = function (configuration?: Configuration, basePath
          */
         chatsGet(requestParameters: ChatsApiChatsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ChatsGet200Response> {
             return localVarFp.chatsGet(requestParameters.count, requestParameters.page, requestParameters.archive, requestParameters.unread, requestParameters.returnTotalCount, requestParameters.hasPendingMessage, requestParameters.mentioned, requestParameters.hasUnsolvedNote, requestParameters.hasFailedMessage, requestParameters.lastMessageFromMe, requestParameters.tags, requestParameters.notTags, requestParameters.contacts, requestParameters.q, requestParameters.assignee, requestParameters.accountId, requestParameters.type, requestParameters.ticket, requestParameters.notAssignee, requestParameters.returnUnreadChatCount, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * This route returns chats for a given account. The chats are not ordered by last message timestamp.
+         * @summary Get unordered chats by account
+         * @param {ChatsApiChatsGetByAccountRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        chatsGetByAccount(requestParameters: ChatsApiChatsGetByAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<ChatsGetByAccount200Response> {
+            return localVarFp.chatsGetByAccount(requestParameters.accountId, requestParameters.fetchContact, requestParameters.count, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -9274,6 +9372,41 @@ export interface ChatsApiChatsGetRequest {
 }
 
 /**
+ * Request parameters for chatsGetByAccount operation in ChatsApi.
+ * @export
+ * @interface ChatsApiChatsGetByAccountRequest
+ */
+export interface ChatsApiChatsGetByAccountRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof ChatsApiChatsGetByAccount
+     */
+    readonly accountId: string
+
+    /**
+     * If true, the API will fetch the contact details for each chat.
+     * @type {boolean}
+     * @memberof ChatsApiChatsGetByAccount
+     */
+    readonly fetchContact?: boolean
+
+    /**
+     * Number of items to return
+     * @type {number}
+     * @memberof ChatsApiChatsGetByAccount
+     */
+    readonly count?: number
+
+    /**
+     * 
+     * @type {string}
+     * @memberof ChatsApiChatsGetByAccount
+     */
+    readonly page?: string
+}
+
+/**
  * Request parameters for chatsPatch operation in ChatsApi.
  * @export
  * @interface ChatsApiChatsPatchRequest
@@ -9346,6 +9479,18 @@ export class ChatsApi extends BaseAPI {
      */
     public chatsGet(requestParameters: ChatsApiChatsGetRequest = {}, options?: RawAxiosRequestConfig) {
         return ChatsApiFp(this.configuration).chatsGet(requestParameters.count, requestParameters.page, requestParameters.archive, requestParameters.unread, requestParameters.returnTotalCount, requestParameters.hasPendingMessage, requestParameters.mentioned, requestParameters.hasUnsolvedNote, requestParameters.hasFailedMessage, requestParameters.lastMessageFromMe, requestParameters.tags, requestParameters.notTags, requestParameters.contacts, requestParameters.q, requestParameters.assignee, requestParameters.accountId, requestParameters.type, requestParameters.ticket, requestParameters.notAssignee, requestParameters.returnUnreadChatCount, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * This route returns chats for a given account. The chats are not ordered by last message timestamp.
+     * @summary Get unordered chats by account
+     * @param {ChatsApiChatsGetByAccountRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ChatsApi
+     */
+    public chatsGetByAccount(requestParameters: ChatsApiChatsGetByAccountRequest, options?: RawAxiosRequestConfig) {
+        return ChatsApiFp(this.configuration).chatsGetByAccount(requestParameters.accountId, requestParameters.fetchContact, requestParameters.count, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
