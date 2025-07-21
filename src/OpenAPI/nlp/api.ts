@@ -1780,6 +1780,10 @@ export const KnowledgebaseApiAxiosParamCreator = function (configuration?: Confi
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication token required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
+
 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -1861,6 +1865,10 @@ export const KnowledgebaseApiAxiosParamCreator = function (configuration?: Confi
             const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
@@ -1979,6 +1987,10 @@ export const KnowledgebaseApiAxiosParamCreator = function (configuration?: Confi
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            // authentication token required
+            // oauth required
+            await setOAuthToObject(localVarHeaderParameter, "token", ["AUTOCOMPLETE_GET"], configuration)
 
 
     
