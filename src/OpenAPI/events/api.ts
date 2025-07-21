@@ -7309,7 +7309,6 @@ export const EventName = {
     PushNotification: 'push-notification',
     CampaignInsert: 'campaign-insert',
     CredittransactionrecordInsert: 'credittransactionrecord-insert',
-    KeywordbasedactionInsert: 'keywordbasedaction-insert',
     PaymentintegrationInsert: 'paymentintegration-insert',
     ShopproductInsert: 'shopproduct-insert',
     TeammemberLogout: 'teammember-logout',
@@ -7452,7 +7451,7 @@ export type EventSubscriptionType = typeof EventSubscriptionType[keyof typeof Ev
  * The request body you\'ll receive in a webhook
  * @export
  */
-export type EventWebhookData = AccountDelete | AccountInsert | AccountUpdate | ActionExecute | ActionSchedule | AiCreditUse | BotDelete | BotInsert | BotUpdate | CallDelete | CallInsert | CallUpdate | CallchannelDelete | CallchannelInsert | CallchannelUpdate | CampaignInsert | ChatDelete | ChatInsert | ChatUpdate | ContactDelete | ContactInsert | ContactUpdate | CredittransactionrecordInsert | CrmTicketDelete | CrmTicketInsert | CrmTicketUpdate | CustomerCreditsLevelUpdate | DashboardDelete | DashboardInsert | DashboardUpdate | FewMessagesLeft | GroupUpdate | KeywordbasedactionInsert | MessageDelete | MessageInsert | MessageUpdate | OrderInsert | PaymentintegrationInsert | PlatformproductDelete | PlatformproductInsert | PlatformproductUpdate | PresenceUpdate | PushNotification | ShopproductInsert | StaleAccountNotification | TagDelete | TagInsert | TagUpdate | TeamDelete | TeamInsert | TeamUpdate | TeammemberDelete | TeammemberInsert | TeammemberLogout | TeammemberUpdate | TrackingDelete | TrackingInsert | TrackingUpdate | UserDelete | UserInsert | UserUpdate;
+export type EventWebhookData = AccountDelete | AccountInsert | AccountUpdate | ActionExecute | ActionSchedule | AiCreditUse | BotDelete | BotInsert | BotUpdate | CallDelete | CallInsert | CallUpdate | CallchannelDelete | CallchannelInsert | CallchannelUpdate | CampaignInsert | ChatDelete | ChatInsert | ChatUpdate | ContactDelete | ContactInsert | ContactUpdate | CredittransactionrecordInsert | CrmTicketDelete | CrmTicketInsert | CrmTicketUpdate | CustomerCreditsLevelUpdate | DashboardDelete | DashboardInsert | DashboardUpdate | FewMessagesLeft | GroupUpdate | MessageDelete | MessageInsert | MessageUpdate | OrderInsert | PaymentintegrationInsert | PlatformproductDelete | PlatformproductInsert | PlatformproductUpdate | PresenceUpdate | PushNotification | ShopproductInsert | StaleAccountNotification | TagDelete | TagInsert | TagUpdate | TeamDelete | TeamInsert | TeamUpdate | TeammemberDelete | TeammemberInsert | TeammemberLogout | TeammemberUpdate | TrackingDelete | TrackingInsert | TrackingUpdate | UserDelete | UserInsert | UserUpdate;
 
 /**
  * 
@@ -7972,32 +7971,6 @@ export interface InlineObject {
      */
     'data'?: object;
 }
-/**
- * 
- * @export
- * @interface KeywordbasedactionInsert
- */
-export interface KeywordbasedactionInsert {
-    /**
-     * 
-     * @type {string}
-     * @memberof KeywordbasedactionInsert
-     */
-    'event': KeywordbasedactionInsertEventEnum;
-    /**
-     * 
-     * @type {Array<KeywordbasedactionInsertData>}
-     * @memberof KeywordbasedactionInsert
-     */
-    'data': Array<KeywordbasedactionInsertData>;
-}
-
-export const KeywordbasedactionInsertEventEnum = {
-    KeywordbasedactionInsert: 'keywordbasedaction-insert'
-} as const;
-
-export type KeywordbasedactionInsertEventEnum = typeof KeywordbasedactionInsertEventEnum[keyof typeof KeywordbasedactionInsertEventEnum];
-
 /**
  * 
  * @export
