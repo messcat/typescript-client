@@ -87,6 +87,12 @@ export interface AddSourceLink {
      * @memberof AddSourceLink
      */
     'refetchIntervalHours'?: number;
+    /**
+     * List of links that should not be crawled
+     * @type {Array<string>}
+     * @memberof AddSourceLink
+     */
+    'blockedLinks'?: Array<string>;
 }
 
 export const AddSourceLinkTypeEnum = {
