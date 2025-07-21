@@ -1827,6 +1827,48 @@ export const KnowledgebaseApiAxiosParamCreator = function (configuration?: Confi
         },
         /**
          * 
+         * @summary Remove & block a crawled link from a source
+         * @param {string} baseId 
+         * @param {string} sourceId 
+         * @param {string} linkId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteCrawledLink: async (baseId: string, sourceId: string, linkId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'baseId' is not null or undefined
+            assertParamExists('deleteCrawledLink', 'baseId', baseId)
+            // verify required parameter 'sourceId' is not null or undefined
+            assertParamExists('deleteCrawledLink', 'sourceId', sourceId)
+            // verify required parameter 'linkId' is not null or undefined
+            assertParamExists('deleteCrawledLink', 'linkId', linkId)
+            const localVarPath = `/knowledge-base/{baseId}/sources/{sourceId}/links/{linkId}`
+                .replace(`{${"baseId"}}`, encodeURIComponent(String(baseId)))
+                .replace(`{${"sourceId"}}`, encodeURIComponent(String(sourceId)))
+                .replace(`{${"linkId"}}`, encodeURIComponent(String(linkId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Delete a knowledge base
          * @param {string} id 
          * @param {*} [options] Override http request option.
@@ -2112,6 +2154,21 @@ export const KnowledgebaseApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Remove & block a crawled link from a source
+         * @param {string} baseId 
+         * @param {string} sourceId 
+         * @param {string} linkId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteCrawledLink(baseId: string, sourceId: string, linkId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteCrawledLink(baseId, sourceId, linkId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['KnowledgebaseApi.deleteCrawledLink']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Delete a knowledge base
          * @param {string} id 
          * @param {*} [options] Override http request option.
@@ -2232,6 +2289,16 @@ export const KnowledgebaseApiFactory = function (configuration?: Configuration, 
         },
         /**
          * 
+         * @summary Remove & block a crawled link from a source
+         * @param {KnowledgebaseApiDeleteCrawledLinkRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteCrawledLink(requestParameters: KnowledgebaseApiDeleteCrawledLinkRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+            return localVarFp.deleteCrawledLink(requestParameters.baseId, requestParameters.sourceId, requestParameters.linkId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Delete a knowledge base
          * @param {KnowledgebaseApiDeleteKnowledgeBaseRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -2346,6 +2413,34 @@ export interface KnowledgebaseApiCreateKnowledgeBaseRequest {
      * @memberof KnowledgebaseApiCreateKnowledgeBase
      */
     readonly upsertKnowledgeBase: UpsertKnowledgeBase
+}
+
+/**
+ * Request parameters for deleteCrawledLink operation in KnowledgebaseApi.
+ * @export
+ * @interface KnowledgebaseApiDeleteCrawledLinkRequest
+ */
+export interface KnowledgebaseApiDeleteCrawledLinkRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof KnowledgebaseApiDeleteCrawledLink
+     */
+    readonly baseId: string
+
+    /**
+     * 
+     * @type {string}
+     * @memberof KnowledgebaseApiDeleteCrawledLink
+     */
+    readonly sourceId: string
+
+    /**
+     * 
+     * @type {string}
+     * @memberof KnowledgebaseApiDeleteCrawledLink
+     */
+    readonly linkId: string
 }
 
 /**
@@ -2480,6 +2575,18 @@ export class KnowledgebaseApi extends BaseAPI {
      */
     public createKnowledgeBase(requestParameters: KnowledgebaseApiCreateKnowledgeBaseRequest, options?: RawAxiosRequestConfig) {
         return KnowledgebaseApiFp(this.configuration).createKnowledgeBase(requestParameters.upsertKnowledgeBase, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Remove & block a crawled link from a source
+     * @param {KnowledgebaseApiDeleteCrawledLinkRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof KnowledgebaseApi
+     */
+    public deleteCrawledLink(requestParameters: KnowledgebaseApiDeleteCrawledLinkRequest, options?: RawAxiosRequestConfig) {
+        return KnowledgebaseApiFp(this.configuration).deleteCrawledLink(requestParameters.baseId, requestParameters.sourceId, requestParameters.linkId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
