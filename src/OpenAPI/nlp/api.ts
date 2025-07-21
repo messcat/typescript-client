@@ -300,6 +300,19 @@ export interface AutocompleteSuggestion {
     'text': string;
 }
 /**
+ * Update the link data to be crawled
+ * @export
+ * @interface CrawlSourceRequest
+ */
+export interface CrawlSourceRequest {
+    /**
+     * 
+     * @type {AddSourceLink}
+     * @memberof CrawlSourceRequest
+     */
+    'data'?: AddSourceLink;
+}
+/**
  * 
  * @export
  * @interface CrawlState
@@ -1758,14 +1771,17 @@ export const KnowledgebaseApiAxiosParamCreator = function (configuration?: Confi
          * @summary Crawl a source link
          * @param {string} id 
          * @param {string} sourceId 
+         * @param {CrawlSourceRequest} crawlSourceRequest 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        crawlSource: async (id: string, sourceId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        crawlSource: async (id: string, sourceId: string, crawlSourceRequest: CrawlSourceRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('crawlSource', 'id', id)
             // verify required parameter 'sourceId' is not null or undefined
             assertParamExists('crawlSource', 'sourceId', sourceId)
+            // verify required parameter 'crawlSourceRequest' is not null or undefined
+            assertParamExists('crawlSource', 'crawlSourceRequest', crawlSourceRequest)
             const localVarPath = `/knowledge-base/{id}/sources/{sourceId}/crawl`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)))
                 .replace(`{${"sourceId"}}`, encodeURIComponent(String(sourceId)));
@@ -1786,9 +1802,12 @@ export const KnowledgebaseApiAxiosParamCreator = function (configuration?: Confi
 
 
     
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(crawlSourceRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -2148,11 +2167,12 @@ export const KnowledgebaseApiFp = function(configuration?: Configuration) {
          * @summary Crawl a source link
          * @param {string} id 
          * @param {string} sourceId 
+         * @param {CrawlSourceRequest} crawlSourceRequest 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async crawlSource(id: string, sourceId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<KnowledgeBaseSource>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.crawlSource(id, sourceId, options);
+        async crawlSource(id: string, sourceId: string, crawlSourceRequest: CrawlSourceRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<KnowledgeBaseSource>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.crawlSource(id, sourceId, crawlSourceRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['KnowledgebaseApi.crawlSource']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2293,7 +2313,7 @@ export const KnowledgebaseApiFactory = function (configuration?: Configuration, 
          * @throws {RequiredError}
          */
         crawlSource(requestParameters: KnowledgebaseApiCrawlSourceRequest, options?: RawAxiosRequestConfig): AxiosPromise<KnowledgeBaseSource> {
-            return localVarFp.crawlSource(requestParameters.id, requestParameters.sourceId, options).then((request) => request(axios, basePath));
+            return localVarFp.crawlSource(requestParameters.id, requestParameters.sourceId, requestParameters.crawlSourceRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2417,6 +2437,13 @@ export interface KnowledgebaseApiCrawlSourceRequest {
      * @memberof KnowledgebaseApiCrawlSource
      */
     readonly sourceId: string
+
+    /**
+     * 
+     * @type {CrawlSourceRequest}
+     * @memberof KnowledgebaseApiCrawlSource
+     */
+    readonly crawlSourceRequest: CrawlSourceRequest
 }
 
 /**
@@ -2580,7 +2607,7 @@ export class KnowledgebaseApi extends BaseAPI {
      * @memberof KnowledgebaseApi
      */
     public crawlSource(requestParameters: KnowledgebaseApiCrawlSourceRequest, options?: RawAxiosRequestConfig) {
-        return KnowledgebaseApiFp(this.configuration).crawlSource(requestParameters.id, requestParameters.sourceId, options).then((request) => request(this.axios, this.basePath));
+        return KnowledgebaseApiFp(this.configuration).crawlSource(requestParameters.id, requestParameters.sourceId, requestParameters.crawlSourceRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
