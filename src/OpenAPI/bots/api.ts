@@ -4629,6 +4629,7 @@ export const SimplePropertyType = {
     Time: 'time',
     CreditConsumptionType: 'credit_consumption_type',
     CustomFieldSelect: 'custom_field_select',
+    CustomFieldNumber: 'custom_field_number',
     Delay: 'delay',
     Post: 'post',
     KnowledgeBase: 'knowledge_base',
