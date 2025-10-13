@@ -6196,6 +6196,18 @@ export interface WASyncStateInfo {
  */
 export interface WabaStateInfo {
     /**
+     * Whether the WABA is a co-ex biz app
+     * @type {boolean}
+     * @memberof WabaStateInfo
+     */
+    'isBizApp'?: boolean;
+    /**
+     * Percentage of history sync completed
+     * @type {number}
+     * @memberof WabaStateInfo
+     */
+    'historyProgress'?: number;
+    /**
      * 
      * @type {string}
      * @memberof WabaStateInfo
