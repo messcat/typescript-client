@@ -1028,6 +1028,12 @@ export interface AlibabaCamsRegisterRequest {
      */
     'selectedPhoneNumber': string;
     /**
+     * specify whether the selected phone number is the Meta phone number ID or the actual phone number
+     * @type {string}
+     * @memberof AlibabaCamsRegisterRequest
+     */
+    'selectedPhoneNumberType': AlibabaCamsRegisterRequestSelectedPhoneNumberTypeEnum;
+    /**
      * Token from embedded sign up
      * @type {string}
      * @memberof AlibabaCamsRegisterRequest
@@ -1040,6 +1046,12 @@ export const AlibabaCamsRegisterRequestVersionEnum = {
 } as const;
 
 export type AlibabaCamsRegisterRequestVersionEnum = typeof AlibabaCamsRegisterRequestVersionEnum[keyof typeof AlibabaCamsRegisterRequestVersionEnum];
+export const AlibabaCamsRegisterRequestSelectedPhoneNumberTypeEnum = {
+    Id: 'id',
+    Ph: 'ph'
+} as const;
+
+export type AlibabaCamsRegisterRequestSelectedPhoneNumberTypeEnum = typeof AlibabaCamsRegisterRequestSelectedPhoneNumberTypeEnum[keyof typeof AlibabaCamsRegisterRequestSelectedPhoneNumberTypeEnum];
 
 /**
  * @type AnyContactID
