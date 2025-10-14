@@ -6410,10 +6410,11 @@ export const AccountApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Close connection to the account
          * @param {string} accountId 
          * @param {boolean} [logout] Closes the account and logs out from the accounts. Will require user interaction (eg. scan QR) to open it again 
+         * @param {boolean} [silent] Closes the account silently, without sending a \&quot;close\&quot; event 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountsClose: async (accountId: string, logout?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        accountsClose: async (accountId: string, logout?: boolean, silent?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'accountId' is not null or undefined
             assertParamExists('accountsClose', 'accountId', accountId)
             const localVarPath = `/accounts/{accountId}/close`
@@ -6435,6 +6436,10 @@ export const AccountApiAxiosParamCreator = function (configuration?: Configurati
 
             if (logout !== undefined) {
                 localVarQueryParameter['logout'] = logout;
+            }
+
+            if (silent !== undefined) {
+                localVarQueryParameter['silent'] = silent;
             }
 
 
@@ -6753,11 +6758,12 @@ export const AccountApiFp = function(configuration?: Configuration) {
          * @summary Close connection to the account
          * @param {string} accountId 
          * @param {boolean} [logout] Closes the account and logs out from the accounts. Will require user interaction (eg. scan QR) to open it again 
+         * @param {boolean} [silent] Closes the account silently, without sending a \&quot;close\&quot; event 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async accountsClose(accountId: string, logout?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.accountsClose(accountId, logout, options);
+        async accountsClose(accountId: string, logout?: boolean, silent?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.accountsClose(accountId, logout, silent, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AccountApi.accountsClose']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -6878,7 +6884,7 @@ export const AccountApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         accountsClose(requestParameters: AccountApiAccountsCloseRequest, options?: RawAxiosRequestConfig): AxiosPromise<void> {
-            return localVarFp.accountsClose(requestParameters.accountId, requestParameters.logout, options).then((request) => request(axios, basePath));
+            return localVarFp.accountsClose(requestParameters.accountId, requestParameters.logout, requestParameters.silent, options).then((request) => request(axios, basePath));
         },
         /**
          * You can continue to poll this route to check if it has been deleted. When deleted, the route will return a 404.
@@ -6976,6 +6982,13 @@ export interface AccountApiAccountsCloseRequest {
      * @memberof AccountApiAccountsClose
      */
     readonly logout?: boolean
+
+    /**
+     * Closes the account silently, without sending a \&quot;close\&quot; event 
+     * @type {boolean}
+     * @memberof AccountApiAccountsClose
+     */
+    readonly silent?: boolean
 }
 
 /**
@@ -7160,7 +7173,7 @@ export class AccountApi extends BaseAPI {
      * @memberof AccountApi
      */
     public accountsClose(requestParameters: AccountApiAccountsCloseRequest, options?: RawAxiosRequestConfig) {
-        return AccountApiFp(this.configuration).accountsClose(requestParameters.accountId, requestParameters.logout, options).then((request) => request(this.axios, this.basePath));
+        return AccountApiFp(this.configuration).accountsClose(requestParameters.accountId, requestParameters.logout, requestParameters.silent, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
