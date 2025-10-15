@@ -7313,6 +7313,7 @@ export const EventName = {
     ShopproductInsert: 'shopproduct-insert',
     TeammemberLogout: 'teammember-logout',
     AiCreditUse: 'ai-credit-use',
+    IdentityMove: 'identity-move',
     DashboardInsert: 'dashboard-insert',
     DashboardUpdate: 'dashboard-update',
     DashboardDelete: 'dashboard-delete',
@@ -7451,7 +7452,7 @@ export type EventSubscriptionType = typeof EventSubscriptionType[keyof typeof Ev
  * The request body you\'ll receive in a webhook
  * @export
  */
-export type EventWebhookData = AccountDelete | AccountInsert | AccountUpdate | ActionExecute | ActionSchedule | AiCreditUse | BotDelete | BotInsert | BotUpdate | CallDelete | CallInsert | CallUpdate | CallchannelDelete | CallchannelInsert | CallchannelUpdate | CampaignInsert | ChatDelete | ChatInsert | ChatUpdate | ContactDelete | ContactInsert | ContactUpdate | CredittransactionrecordInsert | CrmTicketDelete | CrmTicketInsert | CrmTicketUpdate | CustomerCreditsLevelUpdate | DashboardDelete | DashboardInsert | DashboardUpdate | FewMessagesLeft | GroupUpdate | MessageDelete | MessageInsert | MessageUpdate | OrderInsert | PaymentintegrationInsert | PlatformproductDelete | PlatformproductInsert | PlatformproductUpdate | PresenceUpdate | PushNotification | ShopproductInsert | StaleAccountNotification | TagDelete | TagInsert | TagUpdate | TeamDelete | TeamInsert | TeamUpdate | TeammemberDelete | TeammemberInsert | TeammemberLogout | TeammemberUpdate | TrackingDelete | TrackingInsert | TrackingUpdate | UserDelete | UserInsert | UserUpdate;
+export type EventWebhookData = AccountDelete | AccountInsert | AccountUpdate | ActionExecute | ActionSchedule | AiCreditUse | BotDelete | BotInsert | BotUpdate | CallDelete | CallInsert | CallUpdate | CallchannelDelete | CallchannelInsert | CallchannelUpdate | CampaignInsert | ChatDelete | ChatInsert | ChatUpdate | ContactDelete | ContactInsert | ContactUpdate | CredittransactionrecordInsert | CrmTicketDelete | CrmTicketInsert | CrmTicketUpdate | CustomerCreditsLevelUpdate | DashboardDelete | DashboardInsert | DashboardUpdate | FewMessagesLeft | GroupUpdate | IdentityMove | MessageDelete | MessageInsert | MessageUpdate | OrderInsert | PaymentintegrationInsert | PlatformproductDelete | PlatformproductInsert | PlatformproductUpdate | PresenceUpdate | PushNotification | ShopproductInsert | StaleAccountNotification | TagDelete | TagInsert | TagUpdate | TeamDelete | TeamInsert | TeamUpdate | TeammemberDelete | TeammemberInsert | TeammemberLogout | TeammemberUpdate | TrackingDelete | TrackingInsert | TrackingUpdate | UserDelete | UserInsert | UserUpdate;
 
 /**
  * 
@@ -7940,6 +7941,51 @@ export const GroupUpdateDataParticipantsInnerAdminEnum = {
 
 export type GroupUpdateDataParticipantsInnerAdminEnum = typeof GroupUpdateDataParticipantsInnerAdminEnum[keyof typeof GroupUpdateDataParticipantsInnerAdminEnum];
 
+/**
+ * 
+ * @export
+ * @interface IdentityMove
+ */
+export interface IdentityMove {
+    /**
+     * 
+     * @type {string}
+     * @memberof IdentityMove
+     */
+    'event': IdentityMoveEventEnum;
+    /**
+     * 
+     * @type {Array<IdentityMoveData>}
+     * @memberof IdentityMove
+     */
+    'data': Array<IdentityMoveData>;
+}
+
+export const IdentityMoveEventEnum = {
+    IdentityMove: 'identity-move'
+} as const;
+
+export type IdentityMoveEventEnum = typeof IdentityMoveEventEnum[keyof typeof IdentityMoveEventEnum];
+
+/**
+ * Event fired when an identity of a chat/contact is changed
+ * @export
+ * @interface IdentityMoveData
+ */
+export interface IdentityMoveData {
+    /**
+     * 
+     * @type {string}
+     * @memberof IdentityMoveData
+     */
+    'oldId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof IdentityMoveData
+     */
+    'newId': string;
+}
 /**
  * 
  * @export
