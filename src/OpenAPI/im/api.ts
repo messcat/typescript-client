@@ -1349,7 +1349,7 @@ export interface Chat {
      * @type {Contact}
      * @memberof Chat
      */
-    'contact': Contact;
+    'contact'?: Contact;
     /**
      * 
      * @type {Array<Message>}
