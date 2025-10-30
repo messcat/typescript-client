@@ -7978,6 +7978,12 @@ export interface IdentityMoveData {
      * @type {string}
      * @memberof IdentityMoveData
      */
+    'accountId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof IdentityMoveData
+     */
     'oldId': string;
     /**
      * 
