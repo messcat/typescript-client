@@ -581,8 +581,19 @@ export interface AccountsPatchRequest {
      * @memberof AccountsPatchRequest
      */
     'assignees'?: Array<string>;
+    /**
+     * Engine to be used for this account
+     * @type {string}
+     * @memberof AccountsPatchRequest
+     */
+    'engine'?: AccountsPatchRequestEngineEnum;
 }
 
+export const AccountsPatchRequestEngineEnum = {
+    Sb: 'sb'
+} as const;
+
+export type AccountsPatchRequestEngineEnum = typeof AccountsPatchRequestEngineEnum[keyof typeof AccountsPatchRequestEngineEnum];
 
 /**
  * @type AccountsPatchRequestCredentials
