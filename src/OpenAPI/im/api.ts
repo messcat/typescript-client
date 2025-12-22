@@ -122,7 +122,7 @@ export interface Account {
      */
     'error'?: AppError | null;
     /**
-     * Additional information about the current state of the account. This can be used to provide more context about the state of the account. Eg. has history sync completed, what type of  
+     * Additional information about the current state of the account. This can be used to provide more context about the state of the account. Eg. has history sync completed, what type of 
      * @type {{ [key: string]: any; }}
      * @memberof Account
      */
