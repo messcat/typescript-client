@@ -6136,6 +6136,31 @@ export interface WAStateInfo {
      * @memberof WAStateInfo
      */
     'sync'?: WASyncStateInfo;
+    /**
+     * 
+     * @type {WAStateInfoReachoutRestrict}
+     * @memberof WAStateInfo
+     */
+    'reachoutRestrict'?: WAStateInfoReachoutRestrict;
+}
+/**
+ * 
+ * @export
+ * @interface WAStateInfoReachoutRestrict
+ */
+export interface WAStateInfoReachoutRestrict {
+    /**
+     * An ISO formatted timestamp
+     * @type {string}
+     * @memberof WAStateInfoReachoutRestrict
+     */
+    'expiresAt': string;
+    /**
+     * The type of reachout restriction
+     * @type {string}
+     * @memberof WAStateInfoReachoutRestrict
+     */
+    'type': string;
 }
 /**
  * @type WASyncData
