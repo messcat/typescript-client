@@ -986,7 +986,9 @@ export type LlmMessageToolOutputTypeEnum = typeof LlmMessageToolOutputTypeEnum[k
 export const LlmModel = {
     Gpt4oMini: 'gpt-4o-mini',
     Gpt4o: 'gpt-4o',
-    Gpt54Mini: 'gpt-5.4-mini'
+    Gpt54Mini: 'gpt-5.4-mini',
+    Gpt54: 'gpt-5.4',
+    Gpt55: 'gpt-5.5'
 } as const;
 
 export type LlmModel = typeof LlmModel[keyof typeof LlmModel];
