@@ -6113,6 +6113,12 @@ export interface WAStateInfo {
      */
     'phonePairingState'?: WAPhonePairingState;
     /**
+     * The URL to the passkey script to use on WA web page.
+     * @type {string}
+     * @memberof WAStateInfo
+     */
+    'passkeyScriptUrl'?: string;
+    /**
      * Whether the client has received all pending/offline notifications
      * @type {boolean}
      * @memberof WAStateInfo
